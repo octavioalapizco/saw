@@ -4,21 +4,32 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>Documento sin título</title>
+<style type="text/css">
+table, th, td
+{
+border: none;
+}
+</style>
 </head>
 <?
 	require_once('conectar.php');
 	$link=conector();
 	$band=0;
-
 	
-	if($_GET['vid']>0)
-	{
-	$sql="delete from horarios where id=$_GET[vid]";
-	mysql_query($sql,$link);
+	if(!empty($_GET['vid']) && $_GET['vid']>0)
+	{	
+		$sql='delete from horarios where id="'.$_GET['vid'].';';   // revisar contra sql inyection
+		mysql_query($sql,$link);
 	}
 		
-	if($band<=0){
-				$sql="select dia,horarios.id,H.hora as Hora_Inicio,H2.hora as Hora_Final from dias inner join horarios on dias.id=horarios.id_dia	inner join horas as H on horarios.id_horainicio=H.id inner join horas as H2 on horarios.id_horafinal=H2.id where dias.id=1 and horarios.aula=$_SESSION[aula];";
+	if($band<=0){ //¿En que situacion band puede ser menorr o igual a cero?
+		if (!isset($_SESSION['aula'])){
+			echo '<a href="aires.php">Debe establecer un Aula bla bla bla</a>';
+			exit;
+		}
+		
+		$aula=$_SESSION['aula'];
+		$sql="select dia,horarios.id,H.hora as Hora_Inicio,H2.hora as Hora_Final from dias inner join horarios on dias.id=horarios.id_dia	inner join horas as H on horarios.id_horainicio=H.id inner join horas as H2 on horarios.id_horafinal=H2.id where dias.id=1 and horarios.aula=$aula;";
 		$res3=mysql_query($sql,$link);
 		$band=1;
 	}
@@ -38,19 +49,7 @@
       <th colspan="3" scope="col">Horarios</th>
     </tr>
     <tr>
-      <td colspan="3"><select name="lstDiashor"  onchange="document.form2.submit();">
-        <?
-			$sql="select * from dias";
-			$res2=mysql_query($sql,$link);
-			while($reg2=mysql_fetch_object($res2)){
-		?>
-        <option value="<?=$reg2->id ?>" <? if($_POST['lstDiashor']==$reg2->id) echo "selected";?> >
-          <?=$reg2->dia ?>
-          </option>
-        <? 
-			}
-		?>
-      </select></td>
+      <td colspan="3"></td>
     </tr>
     <tr>
       <td height="32" colspan="3">&nbsp;</td>

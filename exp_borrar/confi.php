@@ -4,6 +4,13 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>Documento sin título</title>
+
+<style type="text/css">
+table, th, td
+{
+border: none;
+}
+</style>
 </head>
 
 <body>
@@ -34,7 +41,7 @@ function sumar(dia)
 		mysql_query($sql,$link);
 	}
 	
-		if($_SESSION[dia]!=$_POST['lstDias'])
+		if(isset($_SESSION['dia']) && isset($_POST['lstDias']) && $_SESSION['dia']!=$_POST['lstDias'])
 	{
 			if($_POST['lstDias']<6)
 				$_POST['lstHinicio']=1;
@@ -42,16 +49,15 @@ function sumar(dia)
 				$_POST['lstHinicio']=18;		
 	}
 	
-		if($_SESSION[inicio]!=$_POST['lstHinicio'])
+		if(isset($_SESSION['inicio']) && $_SESSION['inicio']!=$_POST['lstHinicio'])
 	{
 		if($_POST['lstDias']<6) {
-			$sql="select * from horas where status=1 and id>$_POST[lstHinicio]";
+			$sql='select * from horas where status=1 and id>'.$_POST['lstHinicio'].';';
 			$res3=mysql_query($sql,$link); }
 		else {
-			$sql="select * from horas where status=0 and id>$_POST[lstHinicio]";
+			$sql='select * from horas where status=0 and id>'.$_POST['lstHinicio'].';';
 			$res3=mysql_query($sql,$link); }
-			$band=1;
-	
+			$band=1;	
 	}		
 			
 	
@@ -73,7 +79,7 @@ function sumar(dia)
 
 			while($reg=mysql_fetch_object($res)){
 			 ?>
-              <option value="<?=$reg->id ?>" <? if($_POST['lstDias']==$reg->id) echo "selected";?> >
+              <option value="<?=$reg->id ?>" <? if(isset($_POST['lstDias']) && $_POST['lstDias']==$reg->id) echo "selected";?> >
                 <?=$reg->dia ?>
                 </option>
               <? 
@@ -105,7 +111,7 @@ function sumar(dia)
 			  
 			while($reg=mysql_fetch_object($res)){
 		?>
-              <option value="<?=$reg->id ?>" <? if($_POST['lstHinicio']==$reg->id) echo "selected";?> >
+              <option value="<?=$reg->id ?>" <? if(isset($_POST['lstHinicio']) && $_POST['lstHinicio']==$reg->id) echo "selected";?> >
               <?=$reg->hora ?>
               </option>
               <? 
@@ -148,8 +154,9 @@ function sumar(dia)
         </tr>
       </table>
       <? 
-	  	$_SESSION[dia]=$_POST['lstDias'];
-		$_SESSION[inicio]=$_POST['lstHinicio'];
+	  
+	  	$_SESSION['dia']=(isset($_POST['lstDias']))?  $_POST['lstDias'] : 0;
+		$_SESSION['inicio']=(isset($_POST['lstHinicio']))?  $_POST['lstHinicio'] : 0;;
 		$_SESSION['aula']=$_GET['aula'];
 	  ?>
       <p>&nbsp;</p>
@@ -157,7 +164,7 @@ function sumar(dia)
       <p>&nbsp;</p>
       <p>&nbsp;</p></th>
       <th width="19%" scope="col">&nbsp;</th>
-      <td width="344" scope="col"><iframe width="100%" height="350" src="confdia.php"></iframe></td></td>
+      <td width="344" scope="col"><iframe width="100%" frameborder="0" height="350" src="confdia.php"></iframe></td></td>
     </tr>
   </table>
   <p>&nbsp;</p>
