@@ -1,7 +1,18 @@
 <?php 
-function render_template(){
-	echo 'render_template';
-	//incluir layout principal
-	return true;
+
+
+class Vista{
+	var  $nombre="";
+	function Vista(){
+		
+	}
+	function render(){		
+		
+	}
+	function setVista($vista){
+		$this->vista=$vista;
+	}
+	
 }
+
 ?>
