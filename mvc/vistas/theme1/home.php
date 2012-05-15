@@ -19,43 +19,40 @@ class HomeView{
 				<a href="index.html" id="logo"><img src="imagenes/saw_logo.png" alt=""/></a>
 				<ul>
 					<li class="selected"><a href="index.html">Home</a></li>
-					<li><a href="about.html">About</a></li>
-					<li><a href="blog.html">Blog</a></li>
-					<li><a href="services.html">Services</a></li>
+					<li><a href="#">Nosotros</a></li>
+					<li><a href="#">Monitoreo</a></li>
+					<li><a href="#">Administraci&oacute;</a></li>
 				</ul>
 			</div>
 			<div class="body">
 				<div id="featured">
-					<h3>This is a FREE website template</h3>
-					<p>This website template has been designed by Free Website Templates for you, for free. You can 
-					replace all this text with your own text. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, 
-					sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi 
-					enim ad minim veniam, quis nostrud exerci tation ullamcorper</p>
-					<input type="button" value="Read more" onClick="parent.location='blog.html'"/>
+					<h3>Sistemas Automatizados Web</h3>
+					<p>Una forma pr&aacute;ctica y sencilla de controlar todos sus dispositivos el&eacute;ctricos y electr&oacute;nicos por medio de un sistema web.</p>
+					
 				</div>
 				<ul class="blog">
 					<li>
 						<div>
-							<a href="blog.html"><img src="imagenes/theme1/pastries.jpg" alt=""/></a>
+							<a href="#"><img src="imagenes/theme1/pastries.jpg" alt=""/></a>
 							<p>This website template has been designed by Free Website Templates for you, for free. 
 							You can replace all this text with your own text.</p>
-							<a href="blog.html">Click to read more</a>
+							<a href="#">Click to read more</a>
 						</div>
 					</li>
 					<li>
 						<div>
-							<a href="blog.html"><img src="imagenes/theme1/fruits.jpg" alt=""/></a>
+							<a href="#"><img src="imagenes/theme1/fruits.jpg" alt=""/></a>
 							<p>This website template has been designed by Free Website Templates for you, for free. 
 							You can replace all this text with your own text.</p>
-							<a href="blog.html">Click to read more</a>
+							<a href="#">Click to read more</a>
 						</div>
 					</li>
 					<li>
 						<div>
-							<a href="blog.html"><img src="imagenes/theme1/cosmetics.jpg" alt=""/></a>
+							<a href="#"><img src="imagenes/theme1/cosmetics.jpg" alt=""/></a>
 							<p>This website template has been designed by Free Website Templates for you, for free. 
 							You can replace all this text with your own text.</p>
-							<a href="blog.html">Click to read more</a>
+							<a href="#">Click to read more</a>
 						</div>
 					</li>
 				</ul>
@@ -63,9 +60,9 @@ class HomeView{
 			<div class="footer">
 				<ul>
 					<li><a href="index.html">Home</a></li>
-					<li><a href="about.html">About</a></li>
-					<li><a href="blog.html">Blog</a></li>
-					<li><a href="services.html">Gallery</a></li>
+					<li><a href="#">Nosotros</a></li>
+					<li><a href="#">Monitoreo</a></li>
+					<li><a href="#">Administracion</a></li>
 				</ul>
 				<p>&#169; Copyright &#169; 2011. Company name all rights reserved</p>
 				<div class="connect">
