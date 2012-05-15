@@ -5,7 +5,7 @@ $nosotros=new NosotrosController();
 $nosotros->index();
 
 class NosotrosController{
-	function index(){	
+	function index(){
 		require_once('../vistas/theme1/nosotros_view.php');
 		$tema= new Theme();
 		$vista=new NosotrosView();
