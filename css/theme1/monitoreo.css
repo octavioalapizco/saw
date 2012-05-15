@@ -9,7 +9,37 @@
 
 
 /*------------------------- Body ------------------------*/ 
+.body div#featured input{
+	background:none;
+	background-color:black;
+	border:2px solid #a1a1a1;
+    height:auto;
+    width:auto;
+	font-family: 'RokkittRegular';
+	color:#fff;
+	font-size:18px;
+	margin:0;
+	cursor:pointer;
+	outline:none;
+	border:3px solid #a1a1a1;
+	border-radius:25px;
+}
 
+.body div#featured input:hover{
+	
+	
+	border:3px solid green;
+    height:auto;
+    width:auto;
+	font-family: 'RokkittRegular';
+	color:#fff;
+	font-size:18px;
+	margin:0;
+	cursor:pointer;
+	outline:none;
+	
+	border-radius:25px;
+}
 .body ul.monitoreo{
 	list-style:none;
 	margin:40px 0 0;
