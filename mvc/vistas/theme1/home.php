@@ -65,11 +65,11 @@ class HomeView{
 					<li><a href="#">Administracion</a></li>
 				</ul>
 				<p>&#169; Copyright &#169; 2011. Company name all rights reserved</p>
-				<div class="connect">
+				<!--div class="connect">
 					<a href="http://facebook.com/freewebsitetemplates" id="facebook">facebook</a>
 					<a href="http://twitter.com/fwtemplates" id="twitter">twitter</a>
 					<a href="http://www.youtube.com/fwtemplates" id="vimeo">vimeo</a>
-				</div>
+				</div-->
 			</div>
 		</div>
 	</body>
