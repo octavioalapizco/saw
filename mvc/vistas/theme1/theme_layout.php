@@ -10,6 +10,7 @@ class Theme extends Vista{
 	function setFooter($footer){
 		$this->footer=$footer;
 	}
+	
 	function renderFooter(){
 		if ( isset($this->footer)){
 			$this->footer->render();
