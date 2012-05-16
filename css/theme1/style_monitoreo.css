@@ -21,11 +21,17 @@ body{
 }
 
 /*------------------------- Header ------------------------*/ 
+.separator{
+background: url("../../imagenes/theme1/separator.jpg") no-repeat scroll center top transparent;
+margin-top:10px;
+height:5px;
+width:auto;
+}
 .header{
-	background:url(../../imagenes/theme1/bg-navigation.jpg) no-repeat center 90px;
+	/**/
 	width:940px;
 	margin:0 auto;
-	height:105px;
+	height:58px;
 	padding:36px 10px 0;
 }
 .header a#logo{
@@ -65,9 +71,10 @@ body{
 	overflow:hidden;
 }
 .body div#featured{
-	background:url(../../imagenes/theme1/house.jpg) no-repeat right top;
-	height:448px;
-	padding:0 0 17px;
+	background:url(../../imagenes/theme1/gauzy_text_effect_robot.png) no-repeat right 27px;
+	background-size:210px auto;
+	height:361px;
+	padding:0 0 0px;
 }
 .body div#featured h3{
 	color:#f78117;

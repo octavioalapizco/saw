@@ -6,10 +6,9 @@ class MonitoreoView extends Vista{
 	#================================================================================================================================================================
 	function imprime_monitor_aire($num_aula){
 	?>
-		
-		<div class="tarjeta_monitoreo">			
+		<div class="tarjeta_monitoreo">
 			<div>
-				Dispositivo: 	
+				Dispositivo seleccionado: 	
 				<select> 
 					<option value="1">Aula 1</option>
 					<option value="2">Aula 2</option>
@@ -23,7 +22,6 @@ class MonitoreoView extends Vista{
 			<div style="color:#5D5D5D;padding:0;width:300px;height:auto !important;position:absolute;">Apagado</div>
 			<div style="color:#5D5D5D;padding:0;width:80px; height:auto !important;float:right;margin-right:5px;"><input type="button" value="Apagar"></div>
 			<div style="color:#5D5D5D;padding:0;            height:auto !important;clear:both;text-align:center; "><input type="button" value="Configurar"></div>
-			
 			<!--a href="#">Click to read more</a-->
 		</div>
 	<?php
@@ -36,8 +34,10 @@ class MonitoreoView extends Vista{
 		<style type="text/css">
 			#featured{
 				background:none !important;
-				height:auto !important;
+				height:320px !important;
+				padding-top:41px !important;
 			}
+			
 		</style>
 		<link rel="stylesheet" href="css/theme1/monitoreo.css" type="text/css" />
 		<ul class="monitoreo" style="background:none;display:inline;">
@@ -48,23 +48,13 @@ class MonitoreoView extends Vista{
 			
 		</ul>
 		<div>
-			<div style="margin-left:40px;float:left;">
-				<div class="dias">
-					<select>
-						<option value="1">Lunes</li>
-						<option value="2">Martes</li>
-						<option value="3">Miercoles</li>
-						<option value="4">Jueves</li>
-						<option value="5">Viernes</li>
-						<option value="6">Sabado</li>
-						<option value="7">Domingo</li>
-					</select>
-				</div>
-				<table >
+			<div style="margin-left:40px;float:left;">				
+				<table>
+					<tr><th colspan="2">Configuracion del dia</th></tr>
 					<tr>
-					<th>Hora Inicio</th>
-					<th>Hora Fin</th>
-					<th>Accion</th>
+						<th>Hora Inicio</th>
+						<th>Hora Fin</th>
+						<th>Accion</th>
 					</tr>
 					<tr>
 						<td>7:00 am</td><td>9:00 am</td><td>Encendido</td>
@@ -74,11 +64,10 @@ class MonitoreoView extends Vista{
 					</tr>
 				</table>
 			</div>
-			<div style="clear:both;">
-		<div>
+			<div style="clear:both;"></div>
+		</div>
 		<?php 
-	}
-	
+	}	
 }
 
 

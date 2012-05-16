@@ -81,6 +81,8 @@ class Theme extends Vista{
 					<li class="<?php echo $this->getMenuState('Administracion');?>"><a href="administracion.html">Administraci&oacute;n</a></li>
 				</ul>
 			</div>
+			<div class="separator"></div>
+			
 			<div class="body">
 				<div id="featured">
 					<?php $this->renderVista(); ?>					

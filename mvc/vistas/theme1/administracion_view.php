@@ -6,7 +6,7 @@ class AdministracionView extends Vista{
 		<style type="text/css">
 			#featured{
 				background:none !important;
-				height:auto !important;
+				/*height:auto !important;*/
 			}
 		</style>
 		<h3>Administracion</h3>

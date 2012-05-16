@@ -10,6 +10,8 @@ class NosotrosController{
 		$tema= new Theme();
 		$vista=new NosotrosView();
 		$tema->setVista($vista);
+		$footer=new Vista();
+		$tema->setFooter($footer);
 		$tema->render();
 	}
 }
