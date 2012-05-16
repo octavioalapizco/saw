@@ -64,8 +64,8 @@ class Theme extends Vista{
 <html>
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-		<title>Xayona Website Template</title>
-		<link rel="stylesheet" href="css/theme1/style.css" type="text/css" />
+		<title>SAW</title>
+		<link rel="stylesheet" href="css/theme1/style_monitoreo.css" type="text/css" />
 		<!--[if IE 7]>
 			<link rel="stylesheet" href="css/ie7.css" type="text/css" />
 		<![endif]-->

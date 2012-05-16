@@ -1,3 +1,11 @@
+/*DIAS DE LA SEMANA*/
+
+.dias li{
+	display:inline;
+	padding:5px;;
+	background-color:black;
+	color:white;
+}
 /* Website template by freewebsitetemplates.com */
 /*------------------------- Layout styles ------------------------*/ 
 
@@ -25,9 +33,7 @@
 	border-radius:25px;
 }
 
-.body div#featured input:hover{
-	
-	
+.body div#featured input:hover{	
 	border:3px solid green;
     height:auto;
     width:auto;
@@ -42,7 +48,7 @@
 }
 .body ul.monitoreo{
 	list-style:none;
-	margin:40px 0 0;
+	margin:0px 0 0;
 	padding:0 0 50px;
 	background:url(../../imagenes/theme1/separator.jpg) no-repeat center top;
 	overflow:hidden;
@@ -53,11 +59,11 @@
 .body ul.monitoreo li{
 	float:left;
 	background:url(../../imagenes/theme1/interface.jpg) no-repeat 0 -68px!important;
-	margin:60px 0 0 48px;
+	margin:0px 0 0 48px;
 	height:300px;
 	padding:0;
 }
-.body ul.monitoreo li div{
+.body ul.monitoreo li div.tarjeta_monitoreo{
 	width:281px;
 	height:380px;
 	text-align:center;
@@ -66,15 +72,15 @@
 	margin:0;
 	background:none;
 }
-.body ul.monitoreo li div a img{
+.body ul.monitoreo li div.tarjeta_monitoreo a img{
 	border:0;
 	margin:0 0 0 -3px;
 }
-.body ul.monitoreo li div a img:hover{
+.body ul.monitoreo li div.tarjeta_monitoreo a img:hover{
 	filter:alpha(opacity=80);
 	opacity:0.8;
 }
-.body ul.monitoreo li div p{
+.body ul.monitoreo li div.tarjeta_monitoreo p{
 	width:258px;
 	text-align:justify;
 	color:#828081;
@@ -85,25 +91,25 @@
 	background:none;
 	padding:0;
 }
-.body ul.monitoreo li div a:first-child{
+.body ul.monitoreo li div.tarjeta_monitoreo a:first-child{
 	margin:0;
 	padding:0;
 	background:none;
 	width:auto;
 }
-.body ul.monitoreo li div a:hover{
+.body ul.monitoreo li div.tarjeta_monitoreo a:hover{
 	color:#F78117;
 }
-.body ul.monitoreo li div a{
+.body ul.monitoreo li div.tarjeta_monitoreo a{
 	color:#606060;
 	font-family: 'RokkittRegular';
 	font-style:italic;
 	text-decoration:none;
-	padding:98px 0 0;
-	margin:32px auto 0;
-	display:block;
+	padding:0 0 0;
+	margin:0px auto 0;
+	/*display:block;*/
 	width: 150px;
-	background:url(../../imagenes/theme1/button-more.jpg) no-repeat center top;
+	/*background:url(../../imagenes/theme1/button-more.jpg) no-repeat center top;*/
 	outline:none;
 	font-size:16px;
 	font-weight:normal;

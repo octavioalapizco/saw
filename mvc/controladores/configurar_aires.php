@@ -18,6 +18,8 @@ class ConfigurarAires{
 		$tema= new Theme();
 		$vista=new AdministracionView();
 		$tema->setVista($vista);
+		$footer=new Vista();
+		$tema->setFooter($footer);
 		$tema->render();
 		return true;
 		/*

@@ -128,12 +128,13 @@ body{
 	overflow:hidden;
 }
 .body ul li:first-child{
-	background:none;
+	/*background:none;*/
 	padding:0 0 30px;
 }
 .body ul li{
 	overflow:hidden;
-	background:url(../../imagenes/theme1/separator.jpg) no-repeat center top;
+	/*background:url(../../imagenes/theme1/separator.jpg) no-repeat center top;*/
+	
 	padding:30px 0;
 }
 .body ul li div.featured{
@@ -183,12 +184,7 @@ body{
 	width:auto;
 	outline:none;
 }
-.body ul li div{
-	float:left;
-	margin:0 0 0 50px;
-	/*width:609px;*/
-	/*background:url(../../imagenes/theme1/button-more.jpg) no-repeat left bottom;*/
-}
+
 .body ul li div h3{
 	margin:0;
 	font-size:20px;
