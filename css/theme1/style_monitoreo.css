@@ -71,8 +71,8 @@ width:auto;
 	overflow:hidden;
 }
 .body div#featured{
-	background:url(../../imagenes/theme1/gauzy_text_effect_robot.png) no-repeat right 27px;
-	background-size:210px auto;
+	background:url(../../imagenes/theme1/technology.png) no-repeat right top;
+	/* background-size:210px auto; */
 	height:361px;
 	padding:0 0 0px;
 }
@@ -227,9 +227,13 @@ width:auto;
 }
 
 /*------------------------- Footer ------------------------*/ 
+.separator_footer{
+background:url(../../imagenes/theme1/bg-footer.jpg) no-repeat center top;
+height:36px;
+}
 .footer{
 	width:940px;
-	background:url(../../imagenes/theme1/bg-footer.jpg) no-repeat center top;
+/*background:url(../../imagenes/theme1/bg-footer.jpg) no-repeat center top;	*/
 	padding:65px 10px 207px;
 	margin:0 auto;
 	overflow:hidden;

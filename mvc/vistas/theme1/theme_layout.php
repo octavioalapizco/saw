@@ -94,8 +94,11 @@ class Theme extends Vista{
 					$this->renderFooter(); 				
 				?>	
 			</div>
+			
+			<div class="separator_footer">
+			</div>
 			<div class="footer">
-				<ul>
+				<ul style="">
 					<li><a href="index.html">Home</a></li>
 					<li><a href="nosotros.html">Nosotros</a></li>
 					<li><a href="monitoreo.html">Monitoreo</a></li>
