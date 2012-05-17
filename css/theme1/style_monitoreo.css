@@ -2,6 +2,7 @@
 /*------------------------- Layout styles ------------------------*/ 
 body{
 	margin:0;
+	
 	background:url(../../imagenes/theme1/bg-body.jpg);
 }
 .page{
@@ -69,6 +70,7 @@ width:auto;
 	margin:0 auto;
 	padding:0 10px;
 	overflow:hidden;
+	margin-top:-4px;
 }
 .body div#featured{
 	background:url(../../imagenes/theme1/technology.png) no-repeat right top;
@@ -233,10 +235,12 @@ height:36px;
 }
 .footer{
 	width:940px;
-/*background:url(../../imagenes/theme1/bg-footer.jpg) no-repeat center top;	*/
-	padding:65px 10px 207px;
+	/*background:url(../../imagenes/theme1/bg-footer.jpg) no-repeat center top;	*/
+	/*padding:65px 10px 207px;*/
 	margin:0 auto;
 	overflow:hidden;
+	padding:65px 10px 0;
+	margin-top:20px;
 }
 .footer ul{
 	list-style:none;
@@ -260,20 +264,24 @@ height:36px;
 	border-color:#5b5b5b;
 	border-style: none none none solid;
 	color:#5b5b5b;
-	font-size:10px;
+	/*font-size:10px;*/
 	font-family: Trebuchet MS;
 	text-decoration:none;
-	font-weight:bold;
+	/*font-weight:bold;*/
 	padding:0 6px;
 	outline:none;
+	font-weight:normal;
+	font-size:14px;
 }
 .footer p{
 	color:#5b5b5b;
-	font-size:10px;
+	/*font-size:10px;*/
 	font-family: Trebuchet MS;
 	font-weight:bold;
 	float:left;
-	margin:6px 0 0 135px;
+	/*margin:6px 0 0 135px;*/
+	font-size:14px;
+	margin:6px 0 0 227px;
 }
 .footer div.connect{
 	float:left;
