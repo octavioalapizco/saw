@@ -97,8 +97,9 @@ class Theme extends Vista{
 			
 			<div class="separator_footer">
 			</div>
+			<div style="clear:both;"></div>
 			<div class="footer">
-				<ul style="">
+				<ul >
 					<li><a href="index.html">Home</a></li>
 					<li><a href="nosotros.html">Nosotros</a></li>
 					<li><a href="monitoreo.html">Monitoreo</a></li>
