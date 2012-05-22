@@ -32,6 +32,9 @@ stoMonitoreoDispositivos = Ext.extend(Ext.data.JsonStore, {
                 },
                 {
                     name: 'estado'
+                },
+                {
+                    name: 'fecha'
                 }
             ]
         }, cfg));

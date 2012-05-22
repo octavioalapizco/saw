@@ -43,7 +43,8 @@ gridMonitoreoDispositivosUi = Ext.extend(Ext.grid.GridPanel, {
             xtype: 'paging',
             displayInfo: true,
             displayMsg: '{0} al {1} de {2}',
-            pageSize: 9
+            pageSize: 9,
+            emptyMsg: 'No data'
         };
         gridMonitoreoDispositivosUi.superclass.initComponent.call(this);
     }

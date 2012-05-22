@@ -12,5 +12,8 @@
 	RewriteRule ^monitoreo.html mvc/controladores/monitoreo.php [NC,L] 										# monitoreo.html
 	RewriteRule ^monitoreo/getDispositivos mvc/controladores/monitoreo.php?accion=getDispositivos [NC,L] 	# monitoreo/getDispositivos
 	RewriteRule ^monitoreo/getHorarios mvc/controladores/monitoreo.php?accion=getHorarios [NC,L] 			# monitoreo/getHorarios 
+	RewriteRule ^monitoreo/encenderDispositivo mvc/controladores/monitoreo.php?accion=encenderDispositivo [NC,L] 			# monitoreo/getHorarios 
+	RewriteRule ^monitoreo/apagarDispositivo mvc/controladores/monitoreo.php?accion=apagarDispositivo [NC,L] 			# monitoreo/getHorarios 
+	RewriteRule ^monitoreo/encenderDispositivo mvc/controladores/monitoreo.php?accion=encenderDispositivo [NC,L] 			# monitoreo/getHorarios 
 				
 </IfModule>

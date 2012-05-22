@@ -80,7 +80,8 @@
                         "store": "(none)",
                         "displayInfo": true,
                         "displayMsg": "{0} al {1} de {2}",
-                        "pageSize": 9
+                        "pageSize": 9,
+                        "emptyMsg": "No data"
                     }
                 }
             ]
@@ -144,6 +145,15 @@
                     "snapToGrid": 10,
                     "userConfig": {
                         "name": "estado"
+                    }
+                },
+                {
+                    "id": "MyField5",
+                    "cid": "datafield",
+                    "jsClass": "MyField5",
+                    "snapToGrid": 10,
+                    "userConfig": {
+                        "name": "fecha"
                     }
                 }
             ]

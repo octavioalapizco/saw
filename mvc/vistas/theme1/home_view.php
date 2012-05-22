@@ -2,7 +2,7 @@
 
 class HomeView extends Vista{
 	var $nombre="Home";
-	function render(){		
+	function render(){
 		include ('home/home.html.php');
 	}
 	

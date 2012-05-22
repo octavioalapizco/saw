@@ -47,7 +47,7 @@
                     "jsClass": "MyColumn2",
                     "snapToGrid": 10,
                     "userConfig": {
-                        "header": "Hora Inicio",
+                        "header": "Hora Fin",
                         "dataIndex": "horaFin",
                         "sortable": true,
                         "resizable": "-ext-undefined-",
@@ -81,6 +81,19 @@
                         "emptyMsg": "No data",
                         "pageSize": 7
                     }
+                },
+                {
+                    "id": "MyColumn3",
+                    "cid": "gridcolumn",
+                    "jsClass": "MyColumn3",
+                    "snapToGrid": 10,
+                    "userConfig": {
+                        "header": "Estado",
+                        "sortable": true,
+                        "resizable": "-ext-undefined-",
+                        "width": 100,
+                        "dataIndex": "estado"
+                    }
                 }
             ]
         }
@@ -94,7 +107,8 @@
             "userConfig": {
                 "storeId": "MyStore",
                 "root": "data",
-                "url": "monitoreo/getHorarios"
+                "url": "monitoreo/getHorarios",
+                "idProperty": "idEvento"
             },
             "cn": [
                 {
@@ -103,7 +117,7 @@
                     "jsClass": "MyField",
                     "snapToGrid": 10,
                     "userConfig": {
-                        "name": "idHorario"
+                        "name": "idEvento"
                     }
                 },
                 {
@@ -131,6 +145,15 @@
                     "snapToGrid": 10,
                     "userConfig": {
                         "name": "evento"
+                    }
+                },
+                {
+                    "id": "MyField4",
+                    "cid": "datafield",
+                    "jsClass": "MyField4",
+                    "snapToGrid": 10,
+                    "userConfig": {
+                        "name": "estado"
                     }
                 }
             ]

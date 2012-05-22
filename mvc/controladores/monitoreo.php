@@ -3,15 +3,26 @@ require_once('../mvc.php');
 
 $monitoreo=new MonitoreoController();
 
+
+
 if ( isset($_REQUEST['accion']) ){
 	
 	switch($_REQUEST['accion']){
 		case 'getDispositivos':
-		$monitoreo->getDispositivos();
-		break;
+			$monitoreo->getDispositivos();
+			break;
 		case 'getHorarios':
 			$monitoreo->getHorarios();
-		break;
+			break;
+		case 'encenderDispositivo':
+			
+			
+			$monitoreo->encenderDispositivo();
+			break;
+		case 'apagarDispositivo':
+			
+			$monitoreo->apagarDispositivo();
+			break;
 	}
 	
 	
@@ -34,9 +45,22 @@ class MonitoreoController{
 		$tema->render();
 	}
 	
+	function getModelObject(){
+		require_once('../modelos/monitoreo_model.php');
+		if ( !isset($this->modelObject) ){
+			
+			$this->modelObject=new monitoreoModel();
+		}
+		return $this->modelObject;
+	}
+	
 	/*  Devuelve el estado de todos los aparatos, para ser usada con ajax */
 	function getDispositivos(){
-		$data=array(
+		$model=$this->getModelObject();		
+		$estados=$model->getEstadoDeDispositivos();
+		
+		
+		/*$data=array(
 			array('idDispotitivo'=>1,'tipo'=>'AA','nombre'=>'Aula 1'),
 			array('idDispotitivo'=>2,'tipo'=>'AA','nombre'=>'Aula 2'),
 			array('idDispotitivo'=>3,'tipo'=>'AA','nombre'=>'Aula 3'),
@@ -51,38 +75,35 @@ class MonitoreoController{
 			array('idDispotitivo'=>12,'tipo'=>'AA','nombre'=>'Aula 12'),
 			array('idDispotitivo'=>13,'tipo'=>'AA','nombre'=>'Aula 13'),
 			array('idDispotitivo'=>14,'tipo'=>'AA','nombre'=>'Aula 14'),
-			array('idDispotitivo'=>15,'tipo'=>'AA','nombre'=>'Aula 15'),
-			
-		);
+			array('idDispotitivo'=>15,'tipo'=>'AA','nombre'=>'Aula 15'),			
+		);*/
 		$dispositivos=array(
-			'data'=>$data,
+			'data'=>$estados,
 			'success'=>true
 		);
 		echo json_encode( $dispositivos );
 	}
 	
 	function getHorarios(){
-		$data=array(
-			array('idHorario'=>1,'horaInicio'=>'7:00 AM','horaFin'=>'9:00 AM','evento'=>'encender'),
-			array('idHorario'=>2,'horaInicio'=>'7:00 AM','horaFin'=>'9:00 AM','evento'=>'encender'),
-			array('idHorario'=>3,'horaInicio'=>'7:00 AM','horaFin'=>'9:00 AM','evento'=>'encender'),
-			array('idHorario'=>4,'horaInicio'=>'7:00 AM','horaFin'=>'9:00 AM','evento'=>'encender'),
-			array('idHorario'=>5,'horaInicio'=>'7:00 AM','horaFin'=>'9:00 AM','evento'=>'encender'),
-			array('idHorario'=>6,'horaInicio'=>'7:00 AM','horaFin'=>'9:00 AM','evento'=>'encender'),
-			array('idHorario'=>7,'horaInicio'=>'7:00 AM','horaFin'=>'9:00 AM','evento'=>'encender'),
-			array('idHorario'=>8,'horaInicio'=>'7:00 AM','horaFin'=>'9:00 AM','evento'=>'encender'),
-			array('idHorario'=>9,'horaInicio'=>'7:00 AM','horaFin'=>'9:00 AM','evento'=>'encender'),
-			array('idHorario'=>10,'horaInicio'=>'7:00 AM','horaFin'=>'9:00 AM','evento'=>'encender'),
-			array('idHorario'=>11,'horaInicio'=>'7:00 AM','horaFin'=>'9:00 AM','evento'=>'encender'),
-			array('idHorario'=>12,'horaInicio'=>'7:00 AM','horaFin'=>'9:00 AM','evento'=>'encender'),
-			array('idHorario'=>13,'horaInicio'=>'7:00 AM','horaFin'=>'9:00 AM','evento'=>'encender'),
-			array('idHorario'=>14,'horaInicio'=>'7:00 AM','horaFin'=>'9:00 AM','evento'=>'encender'),
-			array('idHorario'=>15,'horaInicio'=>'7:00 AM','horaFin'=>'9:00 AM','evento'=>'encender'),
-			array('idHorario'=>16,'horaInicio'=>'7:00 AM','horaFin'=>'9:00 AM','evento'=>'encender'),
-			array('idHorario'=>17,'horaInicio'=>'7:00 AM','horaFin'=>'9:00 AM','evento'=>'encender'),
+		if ( empty( $_POST['idDispositivo']) ){
+			$data=array();
+		}else{
+						
+			$fecha=time();
+			$idDispositivo=$_POST['idDispositivo'];
 			
+			$model=$this->getModelObject();
+			$data=$model->getHorariosDelDia($idDispositivo, $fecha);
 			
-		);
+		}
+		
+		//==================================================
+		//  Este bloque debe ejectutarse en una tarea programada, mientas tanto...
+		//==================================================
+		include  ('../modelos/robot_monitoreo.php');
+		$robotMonitoreo=new MonitoreoRobot();
+		$robotMonitoreo->actualizar();
+		//==================================================
 		$dispositivos=array(
 			'data'=>$data,
 			'success'=>true
@@ -94,14 +115,23 @@ class MonitoreoController{
 	
 	}
 	
-	/* Para ser usado con ajax  */
-	function encenderAparato($aparatoId){
-	
+	//Enciende el dispositivo, cancelando el evento configurado para el rango de tiempo que envuelve al instante en el que se reaiza la llamada
+	function encenderDispositivo(){
+		$model=$this->getModelObject();
+		echo "ENCENDER";
+		$idDispositivo=$_POST['idDispositivo'];
+		$model->cancelarEventoActivo($idDispositivo);		
+		$model->cambiarEstadoAlDispositivo($idDispositivo, 'ON');
+		
 	}
 	
 	/* Para ser usado con ajax  */
-	function apagarAparato($aparatoId){
-	
+	function apagarDispositivo(){
+		$model=$this->getModelObject();
+		echo "APPAGAR";
+		$idDispositivo=$_POST['idDispositivo'];
+		$model->cancelarEventoActivo($idDispositivo);		
+		$model->cambiarEstadoAlDispositivo($idDispositivo, 'OFF');
 	}
 }
 
