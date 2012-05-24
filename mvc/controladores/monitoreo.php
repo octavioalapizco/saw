@@ -12,8 +12,7 @@ class MonitoreoController{
 		$vista=new MonitoreoView();
 		$tema->setVista($vista);
 		$footer=new Vista();
-		$tema->setFooter($footer);
-		
+		$tema->setFooter($footer);		
 		$tema->render();
 	}
 	
@@ -37,5 +36,4 @@ class MonitoreoController{
 	
 	}
 }
-
 ?>
