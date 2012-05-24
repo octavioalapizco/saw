@@ -15,8 +15,6 @@ if ( isset($_REQUEST['accion']) ){
 			$monitoreo->getHorarios();
 			break;
 		case 'encenderDispositivo':
-			
-			
 			$monitoreo->encenderDispositivo();
 			break;
 		case 'apagarDispositivo':
@@ -24,7 +22,6 @@ if ( isset($_REQUEST['accion']) ){
 			$monitoreo->apagarDispositivo();
 			break;
 	}
-	
 	
 }else{
 	$monitoreo->render();
