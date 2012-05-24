@@ -23,10 +23,10 @@ body{
 
 /*------------------------- Header ------------------------*/ 
 .separator{
-background: url("../../imagenes/theme1/separator.jpg") no-repeat scroll center top transparent;
-margin-top:10px;
-height:5px;
-width:auto;
+	background: url("../../imagenes/theme1/separator.jpg") no-repeat scroll center top transparent;
+	margin-top:10px;
+	height:5px;
+	width:auto;
 }
 .header{
 	/**/
@@ -73,7 +73,7 @@ width:auto;
 	margin-top:-4px;
 }
 .body div#featured{
-	background:url(../../imagenes/theme1/technology.png) no-repeat right top;
+	/*background:url(../../imagenes/theme1/technology.png) no-repeat right top;*/
 	/* background-size:210px auto; */
 	height:361px;
 	padding:0 0 0px;
@@ -97,7 +97,7 @@ width:auto;
 	text-align:justify;
 	margin:0;
 }
-.body div#featured input{
+.body div#featured input.tema {
 	background:url(../../imagenes/theme1/interface.jpg) no-repeat;
 	border:0;
     height:48px;
@@ -137,8 +137,8 @@ width:auto;
 	overflow:hidden;
 }
 .body ul li:first-child{
-	/*background:none;*/
-	padding:0 0 30px;
+	/*background:none;
+	padding:0 0 30px;*/	
 }
 .body ul li{
 	overflow:hidden;
@@ -147,7 +147,7 @@ width:auto;
 	padding:30px 0;
 }
 .body ul li div.featured{
-	background:url(../../imagenes/theme1/interface.jpg) no-repeat 0 -68px;
+	
 	width:281px;
 	height:292px;
 	text-align: center;

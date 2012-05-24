@@ -2,18 +2,22 @@
 require_once('../mvc.php');
 
 $home=new HomeController();
-$home->index();
-
+$home->render();
 
 class HomeController{
-	function index(){
+
+	/*====================================================
+	index: Procesa la solicitud de la página Index.html 	
+	*====================================================*/
+	function render(){		
 		require_once('../vistas/theme1/home_view.php');
-		$tema= new Theme();
+		$tema= new Theme();			//Layout
 		$vista=new HomeView();
 		$tema->setVista($vista);
 		$footer=new Vista();
 		$tema->setFooter($footer);
 		$tema->render();
 	}
+	
 }
 ?>

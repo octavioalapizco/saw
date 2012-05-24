@@ -8,5 +8,6 @@ if ( !defined('MVC_PATH') ) define("MVC_PATH", '');
 
 //incluir vista principal
 require_once('../vista.php');
+require_once('../modelo.php');
 require_once('../vistas/theme1/theme_layout.php');
 ?>

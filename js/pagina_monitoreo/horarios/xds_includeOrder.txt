@@ -1,0 +1,3 @@
+<script type="text/javascript" src="gridMonitoreoHorarios.ui.js"></script>
+<script type="text/javascript" src="gridMonitoreoHorarios.js"></script>
+<script type="text/javascript" src="stoMonitoreoHorarios.js"></script>

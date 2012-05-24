@@ -79,6 +79,7 @@ class Theme extends Vista{
 					<li class="<?php echo $this->getMenuState('Nosotros'); 		?>"><a href="nosotros.html"		 >Nosotros</a></li>
 					<li class="<?php echo $this->getMenuState('Monitoreo'); 	?>"><a href="monitoreo.html"	 >Monitoreo</a></li>
 					<li class="<?php echo $this->getMenuState('Administracion');?>"><a href="administracion.html">Administraci&oacute;n</a></li>
+					<li class="<?php echo $this->getMenuState('Contacto');?>"><a href="contacto.html">Contacto</a></li>					
 				</ul>
 			</div>
 			<div class="separator"></div>
@@ -97,14 +98,17 @@ class Theme extends Vista{
 			
 			<div class="separator_footer">
 			</div>
+			<div style="clear:both;"></div>
 			<div class="footer">
-				<ul style="">
+				<ul >
 					<li><a href="index.html">Home</a></li>
 					<li><a href="nosotros.html">Nosotros</a></li>
 					<li><a href="monitoreo.html">Monitoreo</a></li>
 					<li><a href="administracion.html">Administracion</a></li>
+					<li><a href="contacto.html">Contacto</a></li>
 				</ul>
-				<p>&#169; Copyright &#169; 2011. Company name all rights reserved</p>
+				<div style="float:right;margin-right:100px">
+				<p>&#169; Copyright &#169; 2011. SAW Todos los derechos registrados</p>
 				<!--div class="connect">
 					<a href="http://facebook.com/freewebsitetemplates" id="facebook">facebook</a>
 					<a href="http://twitter.com/fwtemplates" id="twitter">twitter</a>

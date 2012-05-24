@@ -2,10 +2,14 @@
 require_once('../mvc.php');	
 
 $nosotros=new NosotrosController();
-$nosotros->index();
+$nosotros->render();
 
 class NosotrosController{
-	function index(){
+
+	/*====================================================
+	index: Procesa la solicitud de la página Nosotros.html 	
+	*====================================================*/
+	function render(){				
 		require_once('../vistas/theme1/nosotros_view.php');
 		$tema= new Theme();
 		$vista=new NosotrosView();

@@ -17,7 +17,7 @@
 
 
 /*------------------------- Body ------------------------*/ 
-.body div#featured input{
+.body div#featured .monitoreo input{
 	background:none;
 	background-color:black;
 	border:2px solid #a1a1a1;
@@ -33,7 +33,7 @@
 	border-radius:25px;
 }
 
-.body div#featured input:hover{	
+.body div#featured .monitoreo input:hover{	
 	border:3px solid green;
     height:auto;
     width:auto;
@@ -58,8 +58,8 @@
 }
 .body ul.monitoreo li{
 	float:left;
-	background:url(../../imagenes/theme1/interface.jpg) no-repeat 0 -68px!important;
-	margin:0px 0 0 48px;
+	/* background:url(../../imagenes/theme1/interface.jpg) no-repeat 0 -68px!important;	*/
+	margin:0px 12px 0 14px;
 	height:300px;
 	padding:0;
 }
