@@ -18,7 +18,7 @@ class MonitoreoModel extends Model{
 		
 		
 		$sql = 'SELECT  idEvento,DATE_FORMAT(fechaInicio, "%H:%i:%s" ) as horaInicio,DATE_FORMAT(fechaFin, "%H:%i:%s" )  as horaFin,tipo as evento ,estado
-		FROM eventos_programados where dispositivoId =:idDispositivo';
+		FROM programacion_del_dia where dispositivoId =:idDispositivo';
 				
 		$sth = $dbh->prepare($sql);
 		$sth->bindValue(":idDispositivo",$idDispositivo);				
@@ -30,12 +30,12 @@ class MonitoreoModel extends Model{
 		
 		return $horarios;			
 	}
-	
-	
+	 
+	/*Esta funcion es invocada por el switch */
 	public function cancelarEventoActivo($dispositivoId){
 		$dbh=$this->getDb();
 		
-		$sql = 'UPDATE eventos_programados SET estado="CANCELADO" where dispositivoId = :dispositivoId AND now() BETWEEN fechaInicio AND  fechaFin ';		
+		$sql = 'UPDATE programacion_del_dia SET estado="CANCELADO" where dispositivoId = :dispositivoId AND now() BETWEEN fechaInicio AND  fechaFin ';		
 		$sth = $dbh->prepare($sql);	
 		$sth->bindValue(":dispositivoId",$dispositivoId);						
 		$sth->execute();
@@ -62,10 +62,7 @@ class MonitoreoModel extends Model{
 		
 		
 	}
-	public function actualizarEstadoDeDispositivos($fecha){
-		$sql='select  *, now() as fecha from eventos_programados WHERE now() BETWEEN 
- fechaInicio AND  fechaFin';
-	}
+	
 }
 
 ?>
