@@ -9,7 +9,7 @@
 
 
 <div id='fg_membersite'  style="position:absolute; left:50%;margin-left:-150px;margin-top:60px;">
-<form id='login' action='login' method='post' accept-charset='UTF-8'>
+<form id='login' action='login.html' method='post' accept-charset='UTF-8'>
 <fieldset >
 
 
@@ -30,7 +30,7 @@
 </div>
 
 <div class='container'>
-    <input type='submit' name='Submit' value='Submit' />
+    <input type='submit' name='accion' value='login' />
 </div>
 <div class='short_explanation'><a href='reset-pwd-req.php'>Forgot Password?</a></div>
 </fieldset>

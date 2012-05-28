@@ -1,8 +1,18 @@
 <?php
 require_once('../mvc.php');
 
-$home=new LoginController();
-$home->render();
+$login=new LoginController();
+
+
+if ( isset($_REQUEST['accion']) ){	
+	switch($_REQUEST['accion']){
+		case 'login':			
+			$login->render();
+			break;		
+	}
+}else{
+	$login->render();
+} 
 
 class LoginController{
 
@@ -17,6 +27,11 @@ class LoginController{
 		$footer=new Vista();
 		$tema->setFooter($footer);
 		$tema->render();
+	}
+	
+	function login(){
+		//logear usuario
+		
 	}
 	
 }

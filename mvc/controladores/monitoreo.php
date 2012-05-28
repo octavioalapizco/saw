@@ -2,7 +2,9 @@
 require_once('../mvc.php');	
 
 $monitoreo=new MonitoreoController();
- 
+
+
+
 if ( isset($_REQUEST['accion']) ){
 	
 	switch($_REQUEST['accion']){
