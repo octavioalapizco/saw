@@ -1,7 +1,7 @@
 <?php ?>
 
 <script type="text/javascript" src="js/pagina_login/gen_validatorv31.js"></script>
- <script type='text/javascript' src='js/pagina_login/gen_validatorv31.js'></script>
+<script type='text/javascript' src='js/pagina_login/gen_validatorv31.js'></script>
  
 <link rel="STYLESHEET" type="text/css" href="css/theme1/fg_membersite.css" />
 

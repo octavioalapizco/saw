@@ -2,6 +2,8 @@
 class MonitoreoView extends Vista{
 	
 	var $nombre="Monitoreo";	//Usado por primera en el menu principal, para marcar el elemento del menu que pertenece a la pagina activa
+	var $rutaContenido='monitoreo/monitoreo.html.php';
+	
 	function getNombre(){
 		return $this->nombre;
 	}

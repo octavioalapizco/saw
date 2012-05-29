@@ -72,8 +72,7 @@ Ext.onReady(function() {
 	</ul>
 	</div>
 
-	<div style="float:left;width:320px;margin-top:-20px;">	
-		
+	<div style="float:left;width:320px;margin-top:-20px;">			
 		<h1 style="float:none;height:20px;" class="lblFecha">&nbsp;</h1>
 		<div id="gridMonitoreoHorarios"></div>
 	</div>
