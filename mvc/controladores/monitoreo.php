@@ -1,6 +1,18 @@
 <?php 
+session_start();
 require_once('../mvc.php');	
 
+if(!isset($_SESSION['username']))
+{
+		require_once('../vistas/theme1/login_view.php');
+		$tema= new Theme();			//Layout
+		$vista=new LoginView();
+		$tema->setVista($vista);
+		$footer=new Vista();
+		$tema->setFooter($footer);
+		$tema->render();
+		exit();
+}
 $monitoreo=new MonitoreoController();
 
 
