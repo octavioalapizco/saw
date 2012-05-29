@@ -1,0 +1,14 @@
+<?php 
+if (!isset($_SESSION))session_start();
+//Para cargar las dependencias del MVC evitando problemas con las rutas, otra solución serían los namespaces de php5 y autoloading. Para esta sencilla aplicación con esto basta
+if ( !defined('MVC_PATH') ) define("MVC_PATH", '');
+
+//incluir modelo principal
+
+//incluir controlador principal
+
+//incluir vista principal
+require_once('../vista.php');
+require_once('../modelo.php');
+require_once('../vistas/theme1/theme_layout.php');
+?>

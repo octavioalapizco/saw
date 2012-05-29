@@ -16,9 +16,6 @@ if ( isset($_REQUEST['accion']) ){
 
 class LoginController{
 
-	/*====================================================
-	index: Procesa la solicitud de la página Index.html 	
-	*====================================================*/
 	function render(){		
 		require_once('../vistas/theme1/login_view.php');
 		$tema= new Theme();			//Layout

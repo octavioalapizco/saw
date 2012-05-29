@@ -1,64 +1,4 @@
-<?php 
-class Theme extends Vista{
-	
-	function renderVista(){
-		if ( isset($this->vista)){
-			$this->vista->render();
-		}
-	}
-	
-	function setFooter($footer){
-		$this->footer=$footer;
-	}
-	
-	function renderFooter(){
-		if ( isset($this->footer)){
-			$this->footer->render();
-		}else{
-			$this->renderDefaultFooter();
-		}
-	}
-	
-	function getMenuState($menu){
-		if ( isset($this->vista)){
-			if ($this->vista->nombre == $menu){
-				return "selected";
-			}
-		}
-	}
-	
-	function renderDefaultFooter(){
-		?>
-		<ul class="blog">
-			<li>
-				<div>
-					<a href="#"><img src="imagenes/theme1/pastries.jpg" alt=""/></a>
-					<p>This website template has been designed by Free Website Templates for you, for free. 
-					You can replace all this text with your own text.</p>
-					<a href="#">Click to read more</a>
-				</div>
-			</li>
-			<li>
-				<div>
-					<a href="#"><img src="imagenes/theme1/fruits.jpg" alt=""/></a>
-					<p>This website template has been designed by Free Website Templates for you, for free. 
-					You can replace all this text with your own text.</p>
-					<a href="#">Click to read more</a>
-				</div>
-			</li>
-			<li>
-				<div>
-					<a href="#"><img src="imagenes/theme1/cosmetics.jpg" alt=""/></a>
-					<p>This website template has been designed by Free Website Templates for you, for free. 
-					You can replace all this text with your own text.</p>
-					<a href="#">Click to read more</a>
-				</div>
-			</li>
-		</ul>
-		<?php
-	}
-	function render(){
-?>
+<?php ?>
 <!DOCTYPE html>
 <!-- Website template by freewebsitetemplates.com -->
 <html>
@@ -69,6 +9,7 @@ class Theme extends Vista{
 		<!--[if IE 7]>
 			<link rel="stylesheet" href="css/ie7.css" type="text/css" />
 		<![endif]-->
+		<?php $this->incluirHojasDeEstilos(); ?>
 	</head>
 	<body>
 		<div class="page">
@@ -87,14 +28,8 @@ class Theme extends Vista{
 			
 			<div class="body">
 				<div id="featured">
-					<?php $this->renderVista(); ?>					
-					
-				</div>
-				
-				<?php 
-					/* IMPRIME ESTE BLOQUE DE CODIGO */
-					$this->renderFooter(); 				
-				?>	
+					<?php $this->renderSeccion('contenido'); ?>										
+				</div>							
 			</div>
 			
 			<div class="separator_footer">
@@ -111,17 +46,7 @@ class Theme extends Vista{
 				</ul>
 				<div style="float:right;width:auto;">
 				<p style="text-align:right; font-size:11px;margin:0;">&#169; Copyright &#169; 2011. SAW Todos los derechos registrados</p>
-				<!--div class="connect">
-					<a href="http://facebook.com/freewebsitetemplates" id="facebook">facebook</a>
-					<a href="http://twitter.com/fwtemplates" id="twitter">twitter</a>
-					<a href="http://www.youtube.com/fwtemplates" id="vimeo">vimeo</a>
-				</div-->
 			</div>
 		</div>
 	</body>
-</html>  
-<?php	
-	}
-}
-
-?>
+</html>
