@@ -25,6 +25,7 @@ class MonitoreoRobot extends Model{
 		//Llegar a este punto significaa que el dia ya ha cambiado, entonces es necesario actualizar la programacion del dia
 		
 		//Se borra el contenido de la tabla programacion_del_dia
+		
 		//Se agregan de la tabla programacion_semanal, los registros correspondientes al dia de la semana
 		//voalá
 		
