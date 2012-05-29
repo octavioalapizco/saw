@@ -47,17 +47,6 @@ class MonitoreoRobot extends Model{
 		
 		$sql='INSERT INTO programacion_del_dia (dispositivoId,tipo,nombre,fechaInicio,fechaFin,estado)
 		SELECT dispositivoId,tipo,nombre,fechaInicio,fechaFin,estado FROM programacion_semanal WHERE dia=:dia';
-		/*
-		$query='INSERT INTO programacion_del_dia (dispositivoId,tipo,nombre,fechaInicio,fechaFin,estado)
-		SELECT dispositivoId,tipo,nombre,fechaInicio,fechaFin,estado FROM programacion_semanal WHERE dia=2';
-		$result = $dbh->query($query);
-		$row = $result->fetch(PDO::FETCH_ASSOC);
-		echo "RESULTADO";
-		print_r($row);*/
-		
-		
-		
-
 		
 		$sth = $dbh->prepare($sql);		
 		$sth->bindValue(':dia',intval($dia_de_la_semana),PDO::PARAM_INT);	
