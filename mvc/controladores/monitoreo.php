@@ -132,9 +132,9 @@ class MonitoreoController extends Controlador{
 	//Enciende el dispositivo, cancelando el evento configurado para el rango de tiempo que envuelve al instante en el que se reaiza la llamada
 	function encenderDispositivo(){
 		$model=$this->getModelObject();
-		echo "ENCENDER";
+		
 		$idDispositivo=$_POST['idDispositivo'];
-		$model->cancelarEventoActivo($idDispositivo);		
+		$model->cancelarEventoActivo($idDispositivo,'ENCENDIDO');		
 		$model->cambiarEstadoAlDispositivo($idDispositivo, 'ON');
 		
 	}
@@ -142,9 +142,9 @@ class MonitoreoController extends Controlador{
 	/* Para ser usado con ajax  */
 	function apagarDispositivo(){
 		$model=$this->getModelObject();
-		echo "APPAGAR";
+		
 		$idDispositivo=$_POST['idDispositivo'];
-		$model->cancelarEventoActivo($idDispositivo);		
+		$model->cancelarEventoActivo($idDispositivo,'APAGADO');		
 		$model->cambiarEstadoAlDispositivo($idDispositivo, 'OFF');
 	}
 }

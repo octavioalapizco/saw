@@ -13,16 +13,13 @@ class MonitoreoModel extends Model{
 	public function getHorariosDelDia($idDispositivo, $fecha){
 		
 		$dbh=$this->getDb();
-		$fInicio='2012-05-21 01:00:00';
-		$fFin='2012-05-21 12:59:59';
 		
-		
-		$sql = 'SELECT  idEvento,DATE_FORMAT(fechaInicio, "%H:%i:%s" ) as horaInicio,DATE_FORMAT(fechaFin, "%H:%i:%s" )  as horaFin,tipo as evento ,estado
-		FROM programacion_del_dia where dispositivoId =:idDispositivo';
-				
+		$sql = 'SELECT  idEvento,DATE_FORMAT(fechaInicio, "%H:%i:%s" ) as horaInicio,DATE_FORMAT(fechaFin, "%H:%i:%s" )  as horaFin,estado,cancelado as evento
+		FROM programacion_del_dia where dispositivoId =:idDispositivo';			
 		$sth = $dbh->prepare($sql);
 		$sth->bindValue(":idDispositivo",$idDispositivo);				
 		$sth->execute();
+		
 		$horarios = $sth->fetchAll(PDO::FETCH_ASSOC);
 		
 		
@@ -32,13 +29,26 @@ class MonitoreoModel extends Model{
 	}
 	 
 	/*Esta funcion es invocada por el switch */
-	public function cancelarEventoActivo($dispositivoId){
+	public function cancelarEventoActivo($dispositivoId,$estado='APAGADO'){
 		$dbh=$this->getDb();
 		
-		$sql = 'UPDATE programacion_del_dia SET estado="CANCELADO" where dispositivoId = :dispositivoId AND now() BETWEEN fechaInicio AND  fechaFin ';		
+		$sql = 'UPDATE programacion_del_dia SET cancelado=1, estado=:estado where dispositivoId = :dispositivoId AND now() BETWEEN fechaInicio AND  fechaFin ';		
 		$sth = $dbh->prepare($sql);	
 		$sth->bindValue(":dispositivoId",$dispositivoId);						
-		$sth->execute();
+		$sth->bindValue(":estado",$estado);
+		$res=$sth->execute();
+		echo $sql;
+		if (!$res){
+			echo $sql;
+			print_r($sth->errorInfo() );
+			return false;
+		}
+		
+		if ( !empty($error[2]) ){
+		
+			throw new Exception('Error en la capa de datos');
+
+		}
 		
 	}
 	
@@ -50,14 +60,12 @@ class MonitoreoModel extends Model{
 		$sth = $dbh->prepare($sql);	
 		$sth->bindValue(":estado",$estado);						
 		$sth->bindValue(":idDispositivo",$idDispositivo);		
-		$sth->execute();
-		
-		//print_r($sth->debugDumpParams());exit;
-		$error = $sth->errorInfo();
-		if ( !empty($error[2]) ){
-		
-			throw new Exception('Error en la capa de datos');
-
+		$res=$sth->execute();
+		echo $sql;
+		if (!$res){
+			echo $sql;
+			print_r($sth->errorInfo() );
+			return false;
 		}
 		
 		

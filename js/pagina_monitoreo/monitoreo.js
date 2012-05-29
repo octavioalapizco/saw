@@ -18,18 +18,18 @@ monitoreo={
 			
 			
 			this.linkSwitch.on('click', function(){
-				var ruta;
+				var accion;
 				if (this.tarjeta.estado=='ON'){
 					this.actualizarTarjeta(this.tarjeta.nombreDispositivo, 'OFF', this.tarjeta.idDispositivo);	
-					ruta='apagarDispositivo';
+					accion='apagarDispositivo';
 				}else if (this.tarjeta.estado=='OFF'){
 					this.actualizarTarjeta(this.tarjeta.nombreDispositivo, 'ON', this.tarjeta.idDispositivo);	
-					ruta='encenderDispositivo';
+					accion='encenderDispositivo';
 				}
 				
 				Ext.Ajax.request({
 					params: { idDispositivo: this.tarjeta.idDispositivo, },
-					url: 'monitoreo/'+ruta+'.php',
+					url: 'monitoreo/'+accion,
 					
 				   success: function(){
 						/* :TODO: Pediente */
