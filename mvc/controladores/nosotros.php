@@ -11,11 +11,11 @@ class NosotrosController{
 	*====================================================*/
 	function render(){				
 		require_once('../vistas/theme1/nosotros_view.php');
-		$tema= new Theme();
+		$pagina= new Layout();
 		$vista=new NosotrosView();
-		$tema->setSeccion('contenido',$vista);
+		$pagina->setSeccion('contenido',$vista);
 		
-		$tema->render();
+		$pagina->render();
 	}
 }
 ?>

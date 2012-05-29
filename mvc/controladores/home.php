@@ -11,12 +11,12 @@ class HomeController{
 	*====================================================*/
 	function render(){		
 		require_once('../vistas/theme1/home_view.php');
-		$tema= new Theme();			//Layout
+		$pagina= new Layout();			//Layout
 		$vista=new HomeView();
-		$tema->setSeccion('contenido',$vista);
+		$pagina->setSeccion('contenido',$vista);
 		//$footer=new Vista();
 		//$tema->setFooter($footer);
-		$tema->render();
+		$pagina->render();
 	}
 	
 }

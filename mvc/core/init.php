@@ -9,5 +9,5 @@ if (!isset($_SESSION))session_start();
 require_once('composite_view/vista.php');
 require_once('composite_view/pagina.php');
 require_once('modelo.php');
-require_once('../vistas/theme1/main_view.php');
+require_once('../vistas/theme1/layout_view.php');
 ?>

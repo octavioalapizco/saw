@@ -11,11 +11,10 @@ class ContactoController{
 	*====================================================*/
 	function render(){				
 		require_once('../vistas/theme1/contacto_view.php');
-		$tema= new Theme();
+		$pagina= new Layout();
 		$vista=new ContactoView();
-		$tema->setSeccion('contenido',$vista);
-		
-		$tema->render();
+		$pagina->setSeccion('contenido',$vista);		
+		$pagina->render();
 	}
 }
 ?>

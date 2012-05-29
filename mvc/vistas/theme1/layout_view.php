@@ -1,5 +1,5 @@
 <?php 
-class Theme extends Pagina{
+class Layout extends Pagina{
 	
 	function renderVista(){
 		if ( isset($this->vista)){
@@ -19,9 +19,6 @@ class Theme extends Pagina{
 		}
 	}
 	
-
-	
-
 	function render(){
 		include ('main/main.html.php');
 	}

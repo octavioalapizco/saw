@@ -3,7 +3,6 @@ require_once('../core/init.php');
 
 $login=new LoginController();
 
-
 if ( isset($_REQUEST['accion']) ){	
 	switch($_REQUEST['accion']){
 		case 'login':			
@@ -18,11 +17,10 @@ class LoginController{
 
 	function render(){		
 		require_once('../vistas/theme1/login_view.php');
-		$tema= new Theme();			//Layout
+		$pagina= new Layout();			//Layout
 		$vista=new LoginView();
-		$tema->setSeccion('contenido',$vista);
-
-		$tema->render();
+		$pagina->setSeccion('contenido',$vista);
+		$pagina->render();
 	}
 	
 	function getModelObject(){

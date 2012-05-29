@@ -15,11 +15,11 @@ class ConfigurarAires{
 	}
 
 	function mostrarHorarios($aula, $dia, $start=0, $limit=20){
-		$tema= new Theme();
+		$pagina= new Layout();
 		$vista=new AdministracionView();
-		$tema->setSeccion('contenido',$vista);
+		$pagina->setSeccion('contenido',$vista);
 		
-		$tema->render();
+		$pagina->render();
 		return true;
 		/*
 		$model=new ConfigurarAiresModel();

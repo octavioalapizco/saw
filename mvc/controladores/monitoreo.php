@@ -4,7 +4,7 @@ require_once('../core/init.php');
 if(!isset($_SESSION['username']))
 {
 		require_once('../vistas/theme1/login_view.php');
-		$tema= new Theme();			//Layout
+		$tema= new Layout();			//Layout
 		$vista=new LoginView();
 		$tema->setSeccion('contenido',$vista);
 
@@ -44,7 +44,7 @@ class MonitoreoController{
 	
 	function render(){
 		require_once('../vistas/theme1/monitoreo_view.php');
-		$tema= new Theme();
+		$tema= new Layout();
 		$vista=new MonitoreoView();
 		$tema->setSeccion('contenido',$vista);
 
