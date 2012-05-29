@@ -1,5 +1,5 @@
 <?php
-require_once('../mvc.php');
+require_once('../core/init.php');
 
 $home=new HomeController();
 $home->render();
@@ -13,9 +13,9 @@ class HomeController{
 		require_once('../vistas/theme1/home_view.php');
 		$tema= new Theme();			//Layout
 		$vista=new HomeView();
-		$tema->setVista($vista);
-		$footer=new Vista();
-		$tema->setFooter($footer);
+		$tema->setSeccion('contenido',$vista);
+		//$footer=new Vista();
+		//$tema->setFooter($footer);
 		$tema->render();
 	}
 	

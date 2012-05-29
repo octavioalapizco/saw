@@ -29,7 +29,7 @@ class Vista{
 	}
 	
 	function getNombre(){
-		return $this->nombre();
+		return $this->nombre;
 	}
 	
 	function setNombre($nombre){

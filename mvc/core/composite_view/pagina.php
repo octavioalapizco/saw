@@ -8,12 +8,13 @@ class Pagina extends Vista{
 	
 	/* Como la página está compuesta por diferentes secciones, aqui se agrega cada sección  */
 	function setSeccion($seccion, $vista){
-		if ( isset($this->vistas[$seccion]) && $this->vistas[$seccion] instanceof Vista){	
+		if ( $vista instanceof Vista){	
 			//Si la vista es válida, se agrega
 			$this->vistas[$seccion]=$vista;					
 		}else{
 			/* en caso de que la vista sea incorrecta, ¿Que haremos?
 			en modo development, mostramos mensaje de error, en modo produccion solo un return false y log del error		*/
+			throw new Exception("La vista que intenta agregar es incorrecta");
 			return false;
 		}
 		
@@ -32,17 +33,11 @@ class Pagina extends Vista{
 		return true;
 	}
 	
-	//Establece la ruta del tema
-	function setTema($tema){
-	
-	}
-	
 	function render(){
 		include 'main_layout.html.php';
 	}
 	
-	function renderSeccion($seccion){
-		
+	function renderSeccion($seccion){		
 		if ( isset($this->vistas[$seccion]) && $this->vistas[$seccion] instanceof Vista){	
 			//Si la vista es válida, se muestra
 			$this->vistas[$seccion]->render();
@@ -57,15 +52,17 @@ class Pagina extends Vista{
 	}
 	
 	
-	function getMenuState($nombreMenu){
+	
+	/*Usada por el menu para marcar al menu que corresponde con la vista activa */
+	function getMenuState($nombreMenu){		
 		if ( $this->getNombreVistaActiva() == $nombreMenu ){			
-			return "selected";			
+			echo "selected";			
 		}else{
-			return "unselected";
+			echo "unselected";
 		}
 	}
 	
-	private function getNombreVistaActiva(){
+	public function getNombreVistaActiva(){
 		return $this->nombreVistaActiva;
 	}
 	

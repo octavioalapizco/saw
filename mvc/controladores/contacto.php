@@ -1,5 +1,5 @@
 <?php
-require_once('../mvc.php');	
+require_once('../core/init.php');
 
 $nosotros=new ContactoController();
 $nosotros->render();
@@ -13,9 +13,8 @@ class ContactoController{
 		require_once('../vistas/theme1/contacto_view.php');
 		$tema= new Theme();
 		$vista=new ContactoView();
-		$tema->setVista($vista);
-		$footer=new Vista();
-		$tema->setFooter($footer);
+		$tema->setSeccion('contenido',$vista);
+		
 		$tema->render();
 	}
 }

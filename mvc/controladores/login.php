@@ -1,6 +1,5 @@
 <?php
-session_start();
-require_once('../mvc.php');
+require_once('../core/init.php');
 
 $login=new LoginController();
 
@@ -21,14 +20,13 @@ class LoginController{
 		require_once('../vistas/theme1/login_view.php');
 		$tema= new Theme();			//Layout
 		$vista=new LoginView();
-		$tema->setVista($vista);
-		$footer=new Vista();
-		$tema->setFooter($footer);
+		$tema->setSeccion('contenido',$vista);
+
 		$tema->render();
 	}
 	
 	function getModelObject(){
-		require_once('../modelo.php');
+		
 		if ( !isset($this->modelObject) ){
 			
 			$this->modelObject=new Model();
@@ -63,9 +61,7 @@ class LoginController{
 			require_once('../vistas/theme1/monitoreo_view.php');
 			$tema= new Theme();
 			$vista=new MonitoreoView();
-			$tema->setVista($vista);
-			$footer=new Vista();
-			$tema->setFooter($footer);	
+			$tema->setSeccion('contenido',$vista);			
 			$tema->render();
 		}
 		else

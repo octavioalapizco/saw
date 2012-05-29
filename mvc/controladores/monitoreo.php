@@ -1,15 +1,13 @@
 <?php 
-session_start();
-require_once('../mvc.php');	
+require_once('../core/init.php');
 
 if(!isset($_SESSION['username']))
 {
 		require_once('../vistas/theme1/login_view.php');
 		$tema= new Theme();			//Layout
 		$vista=new LoginView();
-		$tema->setVista($vista);
-		$footer=new Vista();
-		$tema->setFooter($footer);
+		$tema->setSeccion('contenido',$vista);
+
 		$tema->render();
 		exit();
 }
@@ -48,9 +46,8 @@ class MonitoreoController{
 		require_once('../vistas/theme1/monitoreo_view.php');
 		$tema= new Theme();
 		$vista=new MonitoreoView();
-		$tema->setVista($vista);
-		$footer=new Vista();
-		$tema->setFooter($footer);	
+		$tema->setSeccion('contenido',$vista);
+
 		$tema->render();
 	}
 	

@@ -1,5 +1,5 @@
 <?php
-require_once('../mvc.php');	
+require_once('../core/init.php');
 
 $nosotros=new NosotrosController();
 $nosotros->render();
@@ -13,9 +13,8 @@ class NosotrosController{
 		require_once('../vistas/theme1/nosotros_view.php');
 		$tema= new Theme();
 		$vista=new NosotrosView();
-		$tema->setVista($vista);
-		$footer=new Vista();
-		$tema->setFooter($footer);
+		$tema->setSeccion('contenido',$vista);
+		
 		$tema->render();
 	}
 }

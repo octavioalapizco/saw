@@ -1,5 +1,5 @@
 <?php
-require_once('../mvc.php');	
+require_once('../core/init.php');
 require_once('../vistas/theme1/administracion_view.php');
 $conf=new ConfigurarAires();
 $conf->mostrarHorarios(1,1);
@@ -17,9 +17,8 @@ class ConfigurarAires{
 	function mostrarHorarios($aula, $dia, $start=0, $limit=20){
 		$tema= new Theme();
 		$vista=new AdministracionView();
-		$tema->setVista($vista);
-		$footer=new Vista();
-		$tema->setFooter($footer);
+		$tema->setSeccion('contenido',$vista);
+		
 		$tema->render();
 		return true;
 		/*
