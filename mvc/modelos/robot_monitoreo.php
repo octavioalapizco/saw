@@ -22,14 +22,54 @@ class MonitoreoRobot extends Model{
 		if ($fechas[0]['fechaNow'] == $fechas[0]['fechaActual']){
 			return true;						
 		}
-		//Llegar a este punto significaa que el dia ya ha cambiado, entonces es necesario actualizar la programacion del dia
+		//Llegar a este punto significaa que el dia ya ha cambiado, entonces es necesario actualizar la programacion del dia		
 		
+		
+		$date = DateTime::CreateFromFormat("Y-m-d",$fechas[0]['fechaNow']);		
+		$dia_de_la_semana= $date->format('N');	//1=Lunes...7=Domingo
+		
+		$dbh->beginTransaction();//startTransaction
+				
 		//Se borra el contenido de la tabla programacion_del_dia
 		
+		
+		$sql='TRUNCATE TABLE programacion_del_dia';
+		$sth = $dbh->prepare($sql);		
+		$sth->execute();
+		
+		//Actualizo la fecha en la tabla config
+		$sql='UPDATE config SET fecha_actual=:fecha WHERE idConfig=1';
+		$sth = $dbh->prepare($sql);		
+		$sth->bindValue(":fecha",$fechas[0]['fechaNow']);	
+		$sth->execute();
+		
 		//Se agregan de la tabla programacion_semanal, los registros correspondientes al dia de la semana
+		
+		$sql='INSERT INTO programacion_del_dia (dispositivoId,tipo,nombre,fechaInicio,fechaFin,estado)
+		SELECT dispositivoId,tipo,nombre,fechaInicio,fechaFin,estado FROM programacion_semanal WHERE dia=:dia';
+		/*
+		$query='INSERT INTO programacion_del_dia (dispositivoId,tipo,nombre,fechaInicio,fechaFin,estado)
+		SELECT dispositivoId,tipo,nombre,fechaInicio,fechaFin,estado FROM programacion_semanal WHERE dia=2';
+		$result = $dbh->query($query);
+		$row = $result->fetch(PDO::FETCH_ASSOC);
+		echo "RESULTADO";
+		print_r($row);*/
+		
+		
+		
+
+		
+		$sth = $dbh->prepare($sql);		
+		$sth->bindValue(':dia',intval($dia_de_la_semana),PDO::PARAM_INT);	
+		$res=$sth->execute();
+		if (!$res){
+			print_r($sth->errorInfo() );
+			return false;
+		}
+		$sth->debugDumpParams();
 		//voalá
 		
-		$fechas[0]['fechaNow'];
+		$dbh->commit();
 		//$sql="UPDATE programacion_del_dia SET estado='esperando' ";
 		//$sth = $dbh->prepare($sql);		
 		//$sth->execute();
@@ -37,7 +77,7 @@ class MonitoreoRobot extends Model{
 	
 	public function actualizar(){
 		$this->actualizarProgramacionDiaria();
-		
+		return true;
 		#----------------------------------------------------		
 		$dbh=$this->getDb();		
 		#----------------------------------------------------
