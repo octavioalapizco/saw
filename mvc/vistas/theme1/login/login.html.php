@@ -9,7 +9,7 @@
 
 
 <div id='fg_membersite'  style="position:absolute; left:50%;margin-left:-150px;margin-top:60px;">
-<form id='login' action='login.html' method='post' accept-charset='UTF-8'>
+<form id='login' action='login.php' method='post' accept-charset='UTF-8'>
 <fieldset >
 
 

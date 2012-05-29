@@ -80,7 +80,7 @@ class Theme extends Vista{
 					<li class="<?php echo $this->getMenuState('Monitoreo'); 	?>"><a href="monitoreo.html"	 >Monitoreo</a></li>
 					<li class="<?php echo $this->getMenuState('Administracion');?>"><a href="administracion.html">Administraci&oacute;n</a></li>
 					<li class="<?php echo $this->getMenuState('Contacto');?>"><a href="contacto.html">Contacto</a></li>		
-					<li class="<?php echo $this->getMenuState('Login');?>"><a href="login.html">Login</a></li>							
+					
 				</ul>
 			</div>
 			<div class="separator"></div>
@@ -107,7 +107,6 @@ class Theme extends Vista{
 					<li><a href="monitoreo.html">Monitoreo</a></li>
 					<li><a href="administracion.html">Administracion</a></li>
 					<li><a href="contacto.html">Contacto</a></li>
-					<li><a href="login.html">Login</a></li>
 				</ul>
 				<div style="float:right;width:auto;">
 				<p style="text-align:right; font-size:11px;margin:0;">&#169; Copyright &#169; 2011. SAW Todos los derechos registrados</p>
