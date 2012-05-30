@@ -56,11 +56,12 @@ class LoginController{
 		{
 		
 			$_SESSION['username'] = $_POST['username'];
-			require_once('../vistas/theme1/monitoreo_view.php');
-			$tema= new Theme();
+			header( 'Location: monitoreo.html' ) ;
+			/*require_once('../vistas/theme1/monitoreo_view.php');
+			$tema= new Layout();
 			$vista=new MonitoreoView();
 			$tema->setSeccion('contenido',$vista);			
-			$tema->render();
+			$tema->render();*/
 		}
 		else
 		{
@@ -68,7 +69,7 @@ class LoginController{
 			$this->render();
 		}
 
-		mysql_close($db);
+		
 
 
 	}	
