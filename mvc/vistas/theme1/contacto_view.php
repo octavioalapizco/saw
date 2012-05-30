@@ -2,7 +2,7 @@
 
 class ContactoView extends Vista{
 	var $nombre="Contacto";
-	function render(){
+	function render($rutaContenido=null){
 		include ('contacto/contacto.html.php');
 	}
 	

@@ -2,7 +2,7 @@
 
 class LoginView extends Vista{
 	var $nombre="Login";
-	function render(){
+	function render($rutaContenido=null){
 		include ('login/login.html.php');
 	}
 	

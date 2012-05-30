@@ -8,7 +8,7 @@ class HomeView extends Vista{
 	
 
 		
-	function render(){
+	function render($rutaContenido=null){
 		include ('home/home.html.php');
 	}
 	

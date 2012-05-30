@@ -19,7 +19,7 @@ class Layout extends Pagina{
 		}
 	}
 	
-	function render(){
+	function render($rutaContenido=null){
 		include ('main/main.html.php');
 	}
 }

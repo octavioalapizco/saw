@@ -1,7 +1,7 @@
 <?php 
 class AdministracionView extends Vista{
 	var $nombre="Administracion";
-	function render(){		
+	function render($rutaContenido=null){		
 		?>
 		<style type="text/css">
 			#featured{
