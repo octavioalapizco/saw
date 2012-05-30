@@ -10,17 +10,18 @@
 			<link rel="stylesheet" href="<?php echo RUTA_BASE; ?>css/ie7.css" type="text/css" />
 		<![endif]-->
 	</head>
-	<?php
+	
+	<body>
+		<?php
 	if(isset($_SESSION['username']))
 	{
 		?>
-		<div align="right" >
+		<div style="position:absolute;right:0;" align="right" >
 			Usuario: <?php echo $_SESSION['username']; ?>
 			<br><a href="login/logout">Logout</a>
 		</div><?php
 	}
 ?>
-	<body>
 		<div class="page">
 			<div class="header">
 				<a href="index.html" id="logo"><img src="<?php echo RUTA_BASE; ?>imagenes/saw_logo.png" alt=""/></a>
