@@ -1,4 +1,4 @@
-<link rel="stylesheet" href="<?php echo RUTA_BASE; ?>css/theme1/blog.css" type="text/css" />
+<link rel="stylesheet" href="css/theme1/blog.css" type="text/css" />
 <style type="text/css">
 	.body{
 		margin-top:-4px;
@@ -14,7 +14,7 @@
 		margin-left:75px;
 	}	
 	.body div#featured{
-		background:url(<?php echo RUTA_BASE; ?>imagenes/theme1/technology.png) no-repeat right top;	
+		background:url(imagenes/theme1/technology.png) no-repeat right top;	
 	}
 </style>
 		

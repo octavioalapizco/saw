@@ -6,7 +6,7 @@ class HomeView extends Vista{
 	function HomeView(){
 		parent::__construct();
 		$this->styleSheets=array(
-			'<link rel="stylesheet" href="'.RUTA_BASE.'css/theme1/blog.css" type="text/css" />'
+			'<link rel="stylesheet" href="css/theme1/blog.css" type="text/css" />'
 		);		
 	}
 
