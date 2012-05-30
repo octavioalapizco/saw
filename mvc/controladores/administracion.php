@@ -1,11 +1,18 @@
 <?php
-require_once('../core/init.php');
+/*require_once('../core/init.php');
 require_once('../vistas/theme1/administracion_view.php');
 $conf=new ConfigurarAires();
-$conf->mostrarHorarios(1,1);
-class ConfigurarAires{
+$conf->mostrarHorarios(1,1);*/
+class AdministracionController extends Controlador{
 
-
+	function render(){
+		require_once('../vistas/theme1/administracion_view.php');
+		$pagina= new Layout();
+		$vista=new AdministracionView();
+		$pagina->setSeccion('contenido',$vista);
+		
+		$pagina->render();
+	}
 	function seleccionarAula($aulaId){
 		
 	}

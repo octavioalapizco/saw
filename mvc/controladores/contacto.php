@@ -1,10 +1,10 @@
 <?php
-require_once('../core/init.php');
+/*require_once('../core/init.php');
 
 $nosotros=new ContactoController();
-$nosotros->render();
+$nosotros->render();*/
 
-class ContactoController{
+class ContactoController extends Controlador{
 
 	/*====================================================
 	index: Procesa la solicitud de la página contacto.html 	

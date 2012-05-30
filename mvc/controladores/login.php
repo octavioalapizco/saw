@@ -1,5 +1,5 @@
 <?php
-require_once('../core/init.php');
+/*require_once('../core/init.php');
 
 $login=new LoginController();
 
@@ -11,9 +11,9 @@ if ( isset($_REQUEST['accion']) ){
 	}
 }else{
 	$login->render();
-} 
+} */
 
-class LoginController{
+class LoginController extends Controlador{
 
 	function render(){		
 		require_once('../vistas/theme1/login_view.php');
@@ -31,8 +31,11 @@ class LoginController{
 		}
 		return $this->modelObject;
 	}
-	
-	function login(){
+	function logout(){
+		unset($_SESSION['username']);
+		header( 'Location: /index.html' ) ;
+	}
+	function dologin(){
 		/*Connection to database logindb using your login name and password*/
 		
 		//$db=mysql_connect('localhost','root','') or die(mysql_error());
@@ -56,7 +59,7 @@ class LoginController{
 		{
 		
 			$_SESSION['username'] = $_POST['username'];
-			header( 'Location: monitoreo.html' ) ;
+			header( 'Location: /monitoreo.html' ) ;
 			/*require_once('../vistas/theme1/monitoreo_view.php');
 			$tema= new Layout();
 			$vista=new MonitoreoView();

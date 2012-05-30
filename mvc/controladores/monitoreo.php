@@ -1,7 +1,7 @@
 <?php 
-require_once('../core/init.php');
+//require_once('../core/init.php');
 
-if(!isset($_SESSION['username']))
+/*if(!isset($_SESSION['username']))
 {
 		require_once('../vistas/theme1/login_view.php');
 		$tema= new Layout();			//Layout
@@ -11,12 +11,11 @@ if(!isset($_SESSION['username']))
 		$tema->render();
 		exit();
 }
-$monitoreo=new MonitoreoController();
+$monitoreo=new MonitoreoController();*/
 
 
-
-if ( isset($_REQUEST['accion']) ){
-	
+/*
+if ( isset($_REQUEST['accion']) ){	
 	switch($_REQUEST['accion']){
 		case 'getDispositivos':
 			$monitoreo->getDispositivos();
@@ -27,8 +26,7 @@ if ( isset($_REQUEST['accion']) ){
 		case 'encenderDispositivo':
 			$monitoreo->encenderDispositivo();
 			break;
-		case 'apagarDispositivo':
-			
+		case 'apagarDispositivo':			
 			$monitoreo->apagarDispositivo();
 			break;
 	}
@@ -36,13 +34,23 @@ if ( isset($_REQUEST['accion']) ){
 }else{
 	$monitoreo->render();
 }  
+*/
 
 
 
-
-class MonitoreoController{
+class MonitoreoController extends Controlador{
 	
 	function render(){
+		if(!isset($_SESSION['username']))
+		{
+				require_once('../vistas/theme1/login_view.php');
+				$tema= new Layout();			//Layout
+				$vista=new LoginView();
+				$tema->setSeccion('contenido',$vista);
+
+				$tema->render();
+				return true;
+		}
 		require_once('../vistas/theme1/monitoreo_view.php');
 		$tema= new Layout();
 		$vista=new MonitoreoView();

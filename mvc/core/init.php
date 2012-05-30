@@ -1,6 +1,9 @@
 <?php 
 if (!isset($_SESSION))session_start();
-
+if ( !defined('RUTA_BASE') ){
+	define("RUTA_BASE", "");	//Cuando se accede al controlador directamente (No mediante el front controller)
+	define("RUTA_MVC","../");
+}
 //incluir modelo principal
 
 //incluir controlador principal
@@ -9,5 +12,7 @@ if (!isset($_SESSION))session_start();
 require_once('composite_view/vista.php');
 require_once('composite_view/pagina.php');
 require_once('modelo.php');
+require_once('controlador.php');
 require_once('../vistas/theme1/layout_view.php');
+
 ?>

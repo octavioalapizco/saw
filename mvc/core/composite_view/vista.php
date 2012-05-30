@@ -55,5 +55,7 @@ class Vista{
 		
 		$this->rutaContenido=$ruta;
 	}
+	function Vista(){
+	}
 }
 ?>

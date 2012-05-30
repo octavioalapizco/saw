@@ -1,22 +1,21 @@
 <IfModule mod_rewrite.c>
 	
-	# Enrutamiento mediante htacces de apache
-	
+	# Enrutamiento mediante htacces de apache	
 	# ¿Se podran agrupar rutas por archivos e incluir esos archivos aqiu?
 	
     RewriteEngine On
-	RewriteRule ^index.html mvc/controladores/home.php [NC,L] 		 # 
-	RewriteRule ^nosotros.html mvc/controladores/nosotros.php [NC,L] #
-	RewriteRule ^contacto.html mvc/controladores/contacto.php [NC,L] #
-	RewriteRule ^login.html mvc/controladores/login.php [NC,L] #
-	RewriteRule ^logout.html mvc/controladores/logout.php [NC,L] #
-	RewriteRule ^administracion.html mvc/controladores/configurar_aires.php [NC,L] # Handle requests for	#
 	
-	RewriteRule ^monitoreo.html mvc/controladores/monitoreo.php [NC,L] 										# monitoreo.html
-	RewriteRule ^monitoreo/getDispositivos mvc/controladores/monitoreo.php?accion=getDispositivos [NC,L] 	# monitoreo/getDispositivos
-	RewriteRule ^monitoreo/getHorarios mvc/controladores/monitoreo.php?accion=getHorarios [NC,L] 			# monitoreo/getHorarios 
-	RewriteRule ^monitoreo/encenderDispositivo mvc/controladores/monitoreo.php?accion=encenderDispositivo [NC,L] 			# monitoreo/getHorarios 
-	RewriteRule ^monitoreo/apagarDispositivo mvc/controladores/monitoreo.php?accion=apagarDispositivo [NC,L] 			# monitoreo/getHorarios 
-	RewriteRule ^monitoreo/encenderDispositivo mvc/controladores/monitoreo.php?accion=encenderDispositivo [NC,L] 			# monitoreo/getHorarios 
-				
+	
+	RewriteRule ^index.html mvc/core/frontc.php/home [NC,L]   # 
+	RewriteRule ^nosotros.html mvc/core/frontc.php/nosotros [NC,L] #
+	RewriteRule ^contacto.html mvc/core/frontc.php/contacto [NC,L] #
+	RewriteRule ^login.html  mvc/core/frontc.php/login [NC,L] #
+	RewriteRule ^logout.html  mvc/core/frontc.php/login/logout [NC,L] #
+	RewriteRule ^administracion.html mvc/core/frontc.php/administracion [NC,L] # Handle requests for	#	
+	RewriteRule ^monitoreo.html /mvc/core/frontc.php/monitoreo [NC,L] 										# monitoreo.html	
+	  	
+	RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteRule ^(.*)$ /mvc/core/frontc.php/$1 [L]
+	#ErrorDocument 500 error500.html
 </IfModule>

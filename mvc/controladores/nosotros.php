@@ -1,10 +1,10 @@
 <?php
-require_once('../core/init.php');
+/*require_once('../core/init.php');
 
 $nosotros=new NosotrosController();
-$nosotros->render();
+$nosotros->render();*/
 
-class NosotrosController{
+class NosotrosController extends Controlador{
 
 	/*====================================================
 	index: Procesa la solicitud de la página Nosotros.html 	

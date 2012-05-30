@@ -1,9 +1,7 @@
-<?php ?>
-<link rel="stylesheet" href="css/theme1/blog.css" type="text/css" />
+<link rel="stylesheet" href="<?php echo RUTA_BASE; ?>css/theme1/blog.css" type="text/css" />
 <style type="text/css">
 	.body{
 		margin-top:-4px;
-		
 	}
 				
 	.body div#featured h3{
@@ -14,22 +12,9 @@
 	.body div#featured p{
 		width:350px;
 		margin-left:75px;
-	}
-	/*.footer p {		
-		font-size:14px;
-		margin:6px 0 0 227px;
-	}
-	.footer {
-		padding:65px 10px 0;
-		margin-top:20px;
-	}
-	.footer ul li a{
-		font-weight:normal;
-		font-size:14px;
-	}*/
-	
+	}	
 	.body div#featured{
-		background:url(imagenes/theme1/technology.png) no-repeat right top;	
+		background:url(<?php echo RUTA_BASE; ?>imagenes/theme1/technology.png) no-repeat right top;	
 	}
 </style>
 		

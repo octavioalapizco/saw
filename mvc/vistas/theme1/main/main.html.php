@@ -5,9 +5,9 @@
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 		<title>SAW - <?php echo $this->getNombreVistaActiva(); ?></title>
-		<link rel="stylesheet" href="css/theme1/style_monitoreo.css" type="text/css" />
+		<link rel="stylesheet" href="<?php echo RUTA_BASE; ?>css/theme1/style_monitoreo.css" type="text/css" />
 		<!--[if IE 7]>
-			<link rel="stylesheet" href="css/ie7.css" type="text/css" />
+			<link rel="stylesheet" href="<?php echo RUTA_BASE; ?>css/ie7.css" type="text/css" />
 		<![endif]-->
 	</head>
 	<?php
@@ -16,14 +16,14 @@
 		?>
 		<div align="right" >
 			Usuario: <?php echo $_SESSION['username']; ?>
-			<br><a href="logout.html">Logout</a>
+			<br><a href="login/logout">Logout</a>
 		</div><?php
 	}
 ?>
 	<body>
 		<div class="page">
 			<div class="header">
-				<a href="index.html" id="logo"><img src="imagenes/saw_logo.png" alt=""/></a>
+				<a href="index.html" id="logo"><img src="<?php echo RUTA_BASE; ?>imagenes/saw_logo.png" alt=""/></a>
 				<ul>
 					<li class="<?php echo $this->getMenuState('Home'); 			?>"><a href="index.html"		 >Home</a></li>
 					<li class="<?php echo $this->getMenuState('Nosotros'); 		?>"><a href="nosotros.html"		 >Quienes somos</a></li>
