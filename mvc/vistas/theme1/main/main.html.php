@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <!-- Website template by freewebsitetemplates.com -->
+
 <html>
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
@@ -9,17 +10,27 @@
 			<link rel="stylesheet" href="css/ie7.css" type="text/css" />
 		<![endif]-->
 	</head>
+	<?php
+	if(isset($_SESSION['username']))
+	{
+		?>
+		<div align="right" >
+			Usuario: <?php echo $_SESSION['username']; ?>
+			<br><a href="logout.html">Logout</a>
+		</div><?php
+	}
+?>
 	<body>
 		<div class="page">
 			<div class="header">
 				<a href="index.html" id="logo"><img src="imagenes/saw_logo.png" alt=""/></a>
 				<ul>
 					<li class="<?php echo $this->getMenuState('Home'); 			?>"><a href="index.html"		 >Home</a></li>
-					<li class="<?php echo $this->getMenuState('Nosotros'); 		?>"><a href="nosotros.html"		 >Nosotros</a></li>
+					<li class="<?php echo $this->getMenuState('Nosotros'); 		?>"><a href="nosotros.html"		 >Quienes somos</a></li>
 					<li class="<?php echo $this->getMenuState('Monitoreo'); 	?>"><a href="monitoreo.html"	 >Monitoreo</a></li>
 					<li class="<?php echo $this->getMenuState('Administracion');?>"><a href="administracion.html">Administraci&oacute;n</a></li>
 					<li class="<?php echo $this->getMenuState('Contacto');      ?>"><a href="contacto.html"      >Contacto</a></li>		
-					<li class="<?php echo $this->getMenuState('Login');         ?>"><a href="login.html"         >Login</a></li>							
+
 				</ul>
 			</div>
 			<div class="separator"></div>
@@ -36,11 +47,10 @@
 			<div class="footer">
 				<ul >
 					<li><a href="index.html">Home</a></li>
-					<li><a href="nosotros.html">Nosotros</a></li>
+					<li><a href="nosotros.html">Quienes somos</a></li>
 					<li><a href="monitoreo.html">Monitoreo</a></li>
 					<li><a href="administracion.html">Administracion</a></li>
 					<li><a href="contacto.html">Contacto</a></li>
-					<li><a href="login.html">Login</a></li>
 				</ul>
 				<div style="float:right;width:auto;">
 				<p style="text-align:right; font-size:11px;margin:0;">&#169; Copyright &#169; 2011. SAW Todos los derechos registrados</p>

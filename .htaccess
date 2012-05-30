@@ -9,6 +9,7 @@
 	RewriteRule ^nosotros.html mvc/controladores/nosotros.php [NC,L] #
 	RewriteRule ^contacto.html mvc/controladores/contacto.php [NC,L] #
 	RewriteRule ^login.html mvc/controladores/login.php [NC,L] #
+	RewriteRule ^logout.html mvc/controladores/logout.php [NC,L] #
 	RewriteRule ^administracion.html mvc/controladores/configurar_aires.php [NC,L] # Handle requests for	#
 	
 	RewriteRule ^monitoreo.html mvc/controladores/monitoreo.php [NC,L] 										# monitoreo.html

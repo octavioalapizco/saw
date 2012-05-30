@@ -36,5 +36,5 @@
 		
 <div style="float:right;margin-right:20px;margin-top:15px;">			
 	<h3 style="">Sistemas Automatizados Web</h3>			
-	<p style="margin-top:30px;">Una forma pr&aacute;ctica y sencilla de controlar todos sus dispositivos el&eacute;ctricos y electr&oacute;nicos por medio de un sistema web.</p>
+	<p style="margin-top:30px;">SAW esta totalmente pensado para aumentar tu comodidad y acceso dandole estilo a tu vida.</p>
 </div>
