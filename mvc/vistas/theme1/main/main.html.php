@@ -1,13 +1,6 @@
 <!DOCTYPE html>
 <!-- Website template by freewebsitetemplates.com -->
-<?php
-	if(isset($_SESSION['username']))
-	{
-		?><div align="right">
-			<li><?php echo $_SESSION['username']; ?></li>
-			<li><a href="logout.html">Logout</a></li><?php
-	}
-?>
+
 <html>
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
@@ -17,6 +10,16 @@
 			<link rel="stylesheet" href="css/ie7.css" type="text/css" />
 		<![endif]-->
 	</head>
+	<?php
+	if(isset($_SESSION['username']))
+	{
+		?>
+		<div align="right" >
+			Usuario: <?php echo $_SESSION['username']; ?>
+			<br><a href="logout.html">Logout</a>
+		</div><?php
+	}
+?>
 	<body>
 		<div class="page">
 			<div class="header">
