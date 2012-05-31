@@ -18,3 +18,4 @@ gridMonitoreoHorarios = Ext.extend(gridMonitoreoHorariosUi, {
 		this.bottomToolbar.bind(this.store);
     }
 });
+Ext.reg('gridHorarios',gridMonitoreoHorarios);
