@@ -77,9 +77,19 @@ class MonitoreoController extends Controlador{
 		$model=$this->getModelObject();
 		
 		$idDispositivo=$_POST['idDispositivo'];
-		$model->cancelarEventoActivo($idDispositivo,'ENCENDIDO');		
-		$model->cambiarEstadoAlDispositivo($idDispositivo, 'ON');
-		
+		$res1=$model->cancelarEventoActivo($idDispositivo,'ENCENDIDO');		
+		if (!$res1){
+			echo "error apagando";
+		}
+		$res2=$model->cambiarEstadoAlDispositivo($idDispositivo, 'ON');
+		if (!$res2){
+			echo "error apagando dispositivo";
+		}
+		if ($res1 && $res2){
+			 echo "OK" ;
+		}else{
+			echo "ERROR" ;
+		}
 	}
 	
 	/* Para ser usado con ajax  */
@@ -87,8 +97,19 @@ class MonitoreoController extends Controlador{
 		$model=$this->getModelObject();
 		
 		$idDispositivo=$_POST['idDispositivo'];
-		$model->cancelarEventoActivo($idDispositivo,'APAGADO');		
-		$model->cambiarEstadoAlDispositivo($idDispositivo, 'OFF');
+		$res1=$model->cancelarEventoActivo($idDispositivo,'APAGADO');		
+		if (!$res1){
+			echo "error apagando dispositivo";
+		}
+		$res2=$model->cambiarEstadoAlDispositivo($idDispositivo, 'OFF');
+		if (!$res2){
+			echo "error apagando dispositivo";
+		}
+		if ($res1 && $res2){
+			 echo "OK" ;
+		}else{
+			echo "ERROR" ;
+		}
 	}
 }
 

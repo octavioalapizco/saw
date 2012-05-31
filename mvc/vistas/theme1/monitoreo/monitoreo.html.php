@@ -66,7 +66,7 @@ Ext.onReady(function() {
 		<div id="gridMonitoreoDispositivos"></div>
 	</div>
 
-	<div style="display:inline;margin-top:-25px;possition:absolute;">
+	<div style="float:left; margin-left:30px;">
 	<ul class="monitoreo" style="background:none;display:inline;margin-top:-25px;possition:absolute;">
 		<li style="">							
 			
@@ -76,7 +76,7 @@ Ext.onReady(function() {
 	</ul>
 	</div>
 
-	<div style="float:left;width:320px;margin-top:-20px;">			
+	<div style="float:left;width:320px;margin-top:-20px;margin-left:28px;">			
 		<h1 style="float:none;height:20px;" class="lblFecha">&nbsp;</h1>
 		<div id="gridMonitoreoHorarios"></div>
 	</div>

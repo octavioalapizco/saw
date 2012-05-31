@@ -37,9 +37,9 @@ class MonitoreoModel extends Model{
 		$sth->bindValue(":dispositivoId",$dispositivoId);						
 		$sth->bindValue(":estado",$estado);
 		$res=$sth->execute();
-		echo $sql;
+		
 		if (!$res){
-			echo $sql;
+			echo "Error: sql=".$sql; //TODO: RESPONDER EN JSON, succes=false y eso;
 			print_r($sth->errorInfo() );
 			return false;
 		}
@@ -49,7 +49,7 @@ class MonitoreoModel extends Model{
 			throw new Exception('Error en la capa de datos');
 
 		}
-		
+		return true;
 	}
 	
 	public function cambiarEstadoAlDispositivo($idDispositivo, $estado){
@@ -61,13 +61,13 @@ class MonitoreoModel extends Model{
 		$sth->bindValue(":estado",$estado);						
 		$sth->bindValue(":idDispositivo",$idDispositivo);		
 		$res=$sth->execute();
-		echo $sql;
+		
 		if (!$res){
-			echo $sql;
+			echo "Error: sql=".$sql; //TODO: RESPONDER EN JSON, succes=false y eso
 			print_r($sth->errorInfo() );
 			return false;
 		}
-		
+		return true;
 		
 	}
 	

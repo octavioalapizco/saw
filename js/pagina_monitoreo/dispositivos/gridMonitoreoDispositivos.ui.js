@@ -10,9 +10,9 @@
  */
 
 gridMonitoreoDispositivosUi = Ext.extend(Ext.grid.GridPanel, {
-    width: 320,
+    width: 297,
     height: 290,
-    autoExpandColumn: 'colTipo',
+    autoExpandColumn: 'colNombre',
     frame: true,
     initComponent: function() {
         this.columns = [
@@ -21,7 +21,8 @@ gridMonitoreoDispositivosUi = Ext.extend(Ext.grid.GridPanel, {
                 header: 'Nombre',
                 dataIndex: 'nombre',
                 sortable: true,
-                width: 150
+                width: 150,
+                id: 'colNombre'
             },
             {
                 xtype: 'gridcolumn',
@@ -29,6 +30,7 @@ gridMonitoreoDispositivosUi = Ext.extend(Ext.grid.GridPanel, {
                 dataIndex: 'tipo',
                 sortable: true,
                 width: 100,
+                hidden: true,
                 id: 'colTipo'
             },
             {
@@ -42,7 +44,7 @@ gridMonitoreoDispositivosUi = Ext.extend(Ext.grid.GridPanel, {
         this.bbar = {
             xtype: 'paging',
             displayInfo: true,
-            displayMsg: '{0} al {1} de {2}',
+            displayMsg: '{0} - {1} de {2}',
             pageSize: 9,
             emptyMsg: 'No data'
         };

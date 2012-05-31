@@ -22,9 +22,9 @@
             "userConfig": {
                 "title": "-ext-undefined-",
                 "store": "-ext-undefined-",
-                "width": 330,
+                "width": 282,
                 "height": 290,
-                "autoExpandColumn": "colAccion",
+                "autoExpandColumn": "colEstado",
                 "frame": true
             },
             "cn": [
@@ -38,7 +38,7 @@
                         "dataIndex": "horaInicio",
                         "sortable": true,
                         "resizable": "-ext-undefined-",
-                        "width": 100
+                        "width": 75
                     }
                 },
                 {
@@ -51,21 +51,7 @@
                         "dataIndex": "horaFin",
                         "sortable": true,
                         "resizable": "-ext-undefined-",
-                        "width": 100
-                    }
-                },
-                {
-                    "id": "MyColumn2",
-                    "cid": "gridcolumn",
-                    "jsClass": "MyColumn3",
-                    "snapToGrid": 10,
-                    "userConfig": {
-                        "header": "Evento",
-                        "dataIndex": "evento",
-                        "sortable": true,
-                        "resizable": "-ext-undefined-",
-                        "width": "-ext-undefined-",
-                        "id": "colAccion"
+                        "width": 66
                     }
                 },
                 {
@@ -79,7 +65,8 @@
                         "displayInfo": true,
                         "displayMsg": "{0} - {1} de {2}",
                         "emptyMsg": "No data",
-                        "pageSize": 7
+                        "pageSize": 7,
+                        "afterPageText": " "
                     }
                 },
                 {
@@ -91,8 +78,9 @@
                         "header": "Estado",
                         "sortable": true,
                         "resizable": "-ext-undefined-",
-                        "width": 100,
-                        "dataIndex": "estado"
+                        "width": 80,
+                        "dataIndex": "estado",
+                        "id": "colEstado"
                     }
                 }
             ]

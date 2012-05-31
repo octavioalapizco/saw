@@ -23,9 +23,9 @@
             "userConfig": {
                 "title": "-ext-undefined-",
                 "store": "-ext-undefined-",
-                "width": 320,
+                "width": 297,
                 "height": 290,
-                "autoExpandColumn": "colTipo",
+                "autoExpandColumn": "colNombre",
                 "frame": true
             },
             "userXType": "gridMonitoreoDispositivos",
@@ -40,7 +40,8 @@
                         "dataIndex": "nombre",
                         "sortable": true,
                         "resizable": "-ext-undefined-",
-                        "width": 150
+                        "width": 150,
+                        "id": "colNombre"
                     }
                 },
                 {
@@ -54,7 +55,8 @@
                         "sortable": true,
                         "resizable": "-ext-undefined-",
                         "width": 100,
-                        "id": "colTipo"
+                        "id": "colTipo",
+                        "hidden": true
                     }
                 },
                 {
@@ -79,7 +81,7 @@
                     "userConfig": {
                         "store": "(none)",
                         "displayInfo": true,
-                        "displayMsg": "{0} al {1} de {2}",
+                        "displayMsg": "{0} - {1} de {2}",
                         "pageSize": 9,
                         "emptyMsg": "No data"
                     }

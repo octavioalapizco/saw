@@ -44,7 +44,7 @@ class MonitoreoRobot extends Model{
 		#----------------------------------------------------
 		#	Actualiza la tabla dispositivos
 		#----------------------------------------------------
-		$sql='UPDATE dispositivos SET estado="OFF"';
+		$sql='UPDATE dispositivos SET estado="OFF" WHERE estado != 1';
 		$sth = $dbh->prepare($sql);				
 		$res=$sth->execute();
 		if (!$res){
