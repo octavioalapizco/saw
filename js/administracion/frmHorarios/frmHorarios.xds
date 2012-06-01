@@ -16,97 +16,229 @@
     "components": [
         {
             "id": "MyForm",
-            "cid": "form",
+            "cid": "panel",
             "jsClass": "frmAdminHorarios",
             "snapToGrid": 10,
             "userConfig": {
-                "title": "-ext-undefined-",
-                "width": 350,
-                "height": "-ext-undefined-",
+                "title": "My Panel",
+                "width": "-ext-undefined-",
+                "height": 385,
                 "unstyled": true,
                 "style": "",
                 "bodyStyle": "padding:8px;",
-                "boxMaxWidth": 350,
+                "boxMaxWidth": 650,
                 "labelWidth": "-ext-undefined-"
             },
             "userXType": "frmAdminHorarios",
             "cn": [
                 {
-                    "id": "MyCombo",
-                    "cid": "combobox",
-                    "jsClass": "MyCombo",
+                    "id": "MyGrid",
+                    "cid": "grid",
+                    "jsClass": "gridMonitoreoDispositivos",
                     "snapToGrid": 10,
                     "userConfig": {
-                        "fieldLabel": "Dispositivo",
-                        "anchor": "-ext-undefined-"
-                    }
+                        "title": "-ext-undefined-",
+                        "store": "(none)",
+                        "width": 297,
+                        "height": 290,
+                        "autoExpandColumn": "colNombre",
+                        "frame": true,
+                        "style": "float:left;"
+                    },
+                    "userXType": "gridMonitoreoDispositivos",
+                    "cn": [
+                        {
+                            "id": "MyColumn2",
+                            "cid": "gridcolumn",
+                            "jsClass": "MyColumn1",
+                            "snapToGrid": 10,
+                            "userConfig": {
+                                "header": "Nombre",
+                                "dataIndex": "nombre",
+                                "sortable": true,
+                                "resizable": "-ext-undefined-",
+                                "width": 150,
+                                "id": "colNombre"
+                            }
+                        },
+                        {
+                            "id": "MyColumn3",
+                            "cid": "gridcolumn",
+                            "jsClass": "MyColumn2",
+                            "snapToGrid": 10,
+                            "userConfig": {
+                                "header": "Tipo",
+                                "dataIndex": "tipo",
+                                "sortable": true,
+                                "resizable": "-ext-undefined-",
+                                "width": 100,
+                                "id": "colTipo",
+                                "hidden": true
+                            }
+                        },
+                        {
+                            "id": "MyColumn4",
+                            "cid": "gridcolumn",
+                            "jsClass": "MyColumn3",
+                            "snapToGrid": 10,
+                            "userConfig": {
+                                "header": "Estado",
+                                "dataIndex": "estado",
+                                "sortable": true,
+                                "resizable": "-ext-undefined-",
+                                "width": 80
+                            }
+                        },
+                        {
+                            "id": "MyPagingToolbar",
+                            "cid": "pagingtoolbar",
+                            "jsClass": "MyPagingToolbar",
+                            "dock": "bbar",
+                            "snapToGrid": 10,
+                            "userConfig": {
+                                "store": "(none)",
+                                "displayInfo": true,
+                                "displayMsg": "{0} - {1} de {2}",
+                                "pageSize": 9,
+                                "emptyMsg": "No data"
+                            }
+                        }
+                    ]
                 },
                 {
-                    "id": "MyFieldSet",
-                    "cid": "fieldset",
-                    "jsClass": "MyFieldSet",
+                    "id": "MyGrid1",
+                    "cid": "grid",
+                    "jsClass": "gridMonitoreoHorarios",
                     "snapToGrid": 10,
                     "userConfig": {
-                        "title": "Horarios",
-                        "bodyStyle": "",
-                        "style": "border-width:1px 0 0 0;"
+                        "title": "-ext-undefined-",
+                        "store": "(none)",
+                        "width": 282,
+                        "height": 290,
+                        "autoExpandColumn": "colEstado",
+                        "frame": true,
+                        "style": "float:left;margin-left:20px;"
                     },
                     "cn": [
                         {
-                            "id": "MyUserComponent",
-                            "cid": "usercomponent",
-                            "jsClass": "gridHorarios",
+                            "id": "MyColumn5",
+                            "cid": "gridcolumn",
+                            "jsClass": "MyColumn1",
                             "snapToGrid": 10,
                             "userConfig": {
-                                "jsClass": "gridHorarios",
-                                "userXType": "gridHorarios",
-                                "autoRef": "gridHorarios",
-                                "width": 265
-                            },
-                            "userComponent": "MyGrid-ext-gen2579"
+                                "header": "Hora Inicio",
+                                "dataIndex": "horaInicio",
+                                "sortable": true,
+                                "resizable": "-ext-undefined-",
+                                "width": 75
+                            }
+                        },
+                        {
+                            "id": "MyColumn6",
+                            "cid": "gridcolumn",
+                            "jsClass": "MyColumn2",
+                            "snapToGrid": 10,
+                            "userConfig": {
+                                "header": "Hora Fin",
+                                "dataIndex": "horaFin",
+                                "sortable": true,
+                                "resizable": "-ext-undefined-",
+                                "width": 66
+                            }
+                        },
+                        {
+                            "id": "MyPagingToolbar1",
+                            "cid": "pagingtoolbar",
+                            "jsClass": "MyPagingToolbar",
+                            "dock": "bbar",
+                            "snapToGrid": 10,
+                            "userConfig": {
+                                "store": "(none)",
+                                "displayInfo": true,
+                                "displayMsg": "{0} - {1} de {2}",
+                                "emptyMsg": "No data",
+                                "pageSize": 7,
+                                "afterPageText": " "
+                            }
+                        },
+                        {
+                            "id": "MyColumn7",
+                            "cid": "gridcolumn",
+                            "jsClass": "MyColumn3",
+                            "snapToGrid": 10,
+                            "userConfig": {
+                                "header": "Estado",
+                                "sortable": true,
+                                "resizable": "-ext-undefined-",
+                                "width": 80,
+                                "dataIndex": "estado",
+                                "id": "colEstado"
+                            }
+                        },
+                        {
+                            "id": "MyToolbar",
+                            "cid": "toolbar",
+                            "jsClass": "MyToolbar",
+                            "dock": "tbar",
+                            "snapToGrid": 10,
+                            "cn": [
+                                {
+                                    "id": "MyCombo1",
+                                    "cid": "combobox",
+                                    "jsClass": "MyCombo1",
+                                    "snapToGrid": 10
+                                }
+                            ]
                         }
                     ]
-                }
-            ]
-        },
-        {
-            "id": "MyGrid-ext-gen2579",
-            "cid": "grid",
-            "jsClass": "gridHorarios",
-            "snapToGrid": 10,
-            "userConfig": {
-                "title": "-ext-undefined-",
-                "store": "(none)",
-                "height": 200
-            },
-            "userXType": "gridHorarios",
-            "cn": [
-                {
-                    "id": "MyColumn",
-                    "cid": "gridcolumn",
-                    "jsClass": "MyColumn",
-                    "snapToGrid": 10,
-                    "userConfig": {
-                        "dataIndex": "string",
-                        "header": "Hora Inicio",
-                        "sortable": true,
-                        "resizable": "-ext-undefined-",
-                        "width": 100
-                    }
                 },
                 {
-                    "id": "MyColumn1",
-                    "cid": "numbercolumn",
-                    "jsClass": "MyColumn1",
+                    "id": "MyForm1",
+                    "cid": "form",
+                    "jsClass": "MyForm1",
                     "snapToGrid": 10,
                     "userConfig": {
-                        "dataIndex": "number",
-                        "header": "Hora Fin",
-                        "sortable": true,
-                        "resizable": "-ext-undefined-",
-                        "width": 100,
-                        "align": "right"
-                    }
+                        "title": "-ext-undefined-",
+                        "style": "float:left;margin-left:10px;",
+                        "width": 250,
+                        "height": 290
+                    },
+                    "cn": [
+                        {
+                            "id": "MyTimeField",
+                            "cid": "timefield",
+                            "jsClass": "MyTimeField",
+                            "snapToGrid": 10,
+                            "userConfig": {
+                                "fieldLabel": "Label",
+                                "anchor": "100%"
+                            }
+                        },
+                        {
+                            "id": "MyTimeField1",
+                            "cid": "timefield",
+                            "jsClass": "MyTimeField1",
+                            "snapToGrid": 10
+                        },
+                        {
+                            "id": "MyToolbar1",
+                            "cid": "toolbar",
+                            "jsClass": "MyToolbar1",
+                            "dock": "bbar",
+                            "snapToGrid": 10,
+                            "cn": [
+                                {
+                                    "id": "MyButton",
+                                    "cid": "button",
+                                    "jsClass": "MyButton",
+                                    "snapToGrid": 10,
+                                    "userConfig": {
+                                        "text": "Guardar"
+                                    }
+                                }
+                            ]
+                        }
+                    ]
                 }
             ]
         }

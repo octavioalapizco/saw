@@ -105,14 +105,30 @@ Ext.onReady(function() {
     Ext.QuickTips.init();
     Ext.onReady(function() {
     Ext.QuickTips.init();
-		var cmp1 = new frmAdminHorarios({
-			renderTo: 'panelAdministracion'
+		//var cmp1 = new frmAdminHorarios({
+			
+		//});
+		//cmp1.show();
+		
+		card = new Ext.Panel({
+			renderTo: 'panelAdministracion',
+			//height:300,
+			width:500,
+			unstyled:false,
+			items:[{
+				xtype:'frmAdminHorarios',
+				listeners:{
+					render:function(){
+					//	this.gridHorarios.setHeight(200);
+						//this.gridHorarios.setWidth(265);
+					//	this.gridHorarios.store.baseParams={idDispositivo:2};
+					//	this.gridHorarios.bottomToolbar.doRefresh();
+					}
+				}
+			}]
 		});
-		cmp1.show();
-		cmp1.gridHorarios.setHeight(200);
-		cmp1.gridHorarios.setWidth(265);
-		cmp1.gridHorarios.store.baseParams={idDispositivo:1};
-		cmp1.gridHorarios.bottomToolbar.doRefresh();
+	
+		
 	});
 	
 	//rowselect 
