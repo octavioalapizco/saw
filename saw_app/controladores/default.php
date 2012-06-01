@@ -1,29 +1,23 @@
 <?php
 class DefaultController extends Controlador{
 	
-	function nosotros(){			
-		require_once('../saw_app/vistas/nosotros_view.php');		
-		$this->renderVista(
-			new NosotrosView()
-		);		
+	function nosotros(){					
+		$this->renderVista('Nosotros','nosotros/nosotros.html.php');
 	}
 			
-	function home($rutaContenido=null ){		
-		require_once('../saw_app/vistas/home_view.php');
-		$this->renderVista(
-			new HomeView()
-		);				
+	function home($rutaContenido=null ){				
+		$this->renderVista('Home','home/home.html.php');				
 	}
 	
-	function contacto(){					
-		require_once('../saw_app/vistas/contacto_view.php');
-		$this->renderVista(
-			new ContactoView()
-		);					
+	function contacto(){							
+		$this->renderVista('Contacto','contacto/contacto.html.php');		
 	}
 	
-	function renderVista($vista){
+	private function renderVista($menuText,$contenido){
+		require_once('../saw_app/vistas/default_view.php');		
 		$pagina= new Layout();
+		$vista=new DefaultView($menuText,$contenido);
+		
 		$pagina->setSeccion('contenido',$vista);		
 		$pagina->render();
 	}
