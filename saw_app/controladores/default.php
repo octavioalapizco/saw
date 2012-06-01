@@ -2,15 +2,15 @@
 class DefaultController extends Controlador{
 	
 	function nosotros(){					
-		$this->renderVista('Nosotros','nosotros/nosotros.html.php');
+		$this->renderVista('Nosotros','default/nosotros.html.php');
 	}
 			
 	function home($rutaContenido=null ){				
-		$this->renderVista('Home','home/home.html.php');				
+		$this->renderVista('Home','default/home.html.php');				
 	}
 	
 	function contacto(){							
-		$this->renderVista('Contacto','contacto/contacto.html.php');		
+		$this->renderVista('Contacto','default/contacto.html.php');		
 	}
 	
 	private function renderVista($menuText,$contenido){

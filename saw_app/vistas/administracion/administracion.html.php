@@ -97,7 +97,18 @@ border: 1px solid #D10000;
 background-color: black;
 color: white;
 }
+
+.styled-select select {
+   background: transparent;
+   width: 268px;
+   padding: 5px;
+   font-size: 16px;
+   border: 1px solid #ccc;
+   height: 34px;
+}
 </style>
+
+
 <script>
 
 Ext.onReady(function() {
@@ -120,4 +131,11 @@ Ext.onReady(function() {
 	
 </ul>
 </div>	
+<!-- http://bavotasan.com/2011/style-select-box-using-only-css/
+<div class="styled-select">
+<select>
+<option>Here is the first option</option>
+<option>The second option</option>
+</select>
+</div>-->
 <div id="panelAdministracion" style="margin-top:60px;position:absolute;left:50%;margin-left:-175px;"></div>
