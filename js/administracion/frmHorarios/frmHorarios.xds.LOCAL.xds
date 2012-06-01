@@ -1,0 +1,115 @@
+{
+    "name": "frmHorarios.xds",
+    "projectId": "CB17F2C0-A0CF-40A6-9D68-AF84308B7CA1",
+    "settings": {
+        "urlPrefix": "http://localhost/",
+        "spacesToIndent": 4,
+        "codeGenFormat": "Class",
+        "extPath": "http://extjs.cachefly.net/ext-3.3.1/",
+        "exportPath": ".",
+        "lineEnding": "CRLF",
+        "instantiateStore": true,
+        "exportXDSFiles": true,
+        "genTimestamps": true
+    },
+    "xdsVersion": "1.1.2",
+    "components": [
+        {
+            "id": "MyForm",
+            "cid": "form",
+            "jsClass": "frmAdminHorarios",
+            "snapToGrid": 10,
+            "userConfig": {
+                "title": "-ext-undefined-",
+                "width": 350,
+                "height": "-ext-undefined-",
+                "unstyled": true,
+                "style": "",
+                "bodyStyle": "padding:8px;",
+                "boxMaxWidth": 350,
+                "labelWidth": "-ext-undefined-"
+            },
+            "userXType": "frmAdminHorarios",
+            "cn": [
+                {
+                    "id": "MyCombo",
+                    "cid": "combobox",
+                    "jsClass": "MyCombo",
+                    "snapToGrid": 10,
+                    "userConfig": {
+                        "fieldLabel": "Dispositivo",
+                        "anchor": "-ext-undefined-"
+                    }
+                },
+                {
+                    "id": "MyFieldSet",
+                    "cid": "fieldset",
+                    "jsClass": "MyFieldSet",
+                    "snapToGrid": 10,
+                    "userConfig": {
+                        "title": "Horarios",
+                        "bodyStyle": "",
+                        "style": "border-width:1px 0 0 0;margin-top:30px;"
+                    },
+                    "cn": [
+                        {
+                            "id": "MyUserComponent",
+                            "cid": "usercomponent",
+                            "jsClass": "gridHorarios",
+                            "snapToGrid": 10,
+                            "userConfig": {
+                                "jsClass": "gridHorarios",
+                                "userXType": "gridHorarios",
+                                "autoRef": "gridHorarios",
+                                "width": 265
+                            },
+                            "userComponent": "MyGrid-ext-gen2579"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "MyGrid-ext-gen2579",
+            "cid": "grid",
+            "jsClass": "gridHorarios",
+            "snapToGrid": 10,
+            "userConfig": {
+                "title": "-ext-undefined-",
+                "store": "(none)",
+                "height": 200
+            },
+            "userXType": "gridHorarios",
+            "cn": [
+                {
+                    "id": "MyColumn",
+                    "cid": "gridcolumn",
+                    "jsClass": "MyColumn",
+                    "snapToGrid": 10,
+                    "userConfig": {
+                        "dataIndex": "string",
+                        "header": "Hora Inicio",
+                        "sortable": true,
+                        "resizable": "-ext-undefined-",
+                        "width": 100
+                    }
+                },
+                {
+                    "id": "MyColumn1",
+                    "cid": "numbercolumn",
+                    "jsClass": "MyColumn1",
+                    "snapToGrid": 10,
+                    "userConfig": {
+                        "dataIndex": "number",
+                        "header": "Hora Fin",
+                        "sortable": true,
+                        "resizable": "-ext-undefined-",
+                        "width": 100,
+                        "align": "right"
+                    }
+                }
+            ]
+        }
+    ],
+    "stores": []
+}

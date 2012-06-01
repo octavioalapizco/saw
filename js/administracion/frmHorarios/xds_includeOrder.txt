@@ -1,4 +1,2 @@
 <script type="text/javascript" src="frmAdminHorarios.ui.js"></script>
 <script type="text/javascript" src="frmAdminHorarios.js"></script>
-<script type="text/javascript" src="gridHorarios.ui.js"></script>
-<script type="text/javascript" src="gridHorarios.js"></script>

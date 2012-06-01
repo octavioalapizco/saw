@@ -1,4 +1,0 @@
-<script type="text/javascript" src="tbpAdministracion.ui.js"></script>
-<script type="text/javascript" src="tbpAdministracion.js"></script>
-<script type="text/javascript" src="gridHorarios.ui.js"></script>
-<script type="text/javascript" src="gridHorarios.js"></script>
