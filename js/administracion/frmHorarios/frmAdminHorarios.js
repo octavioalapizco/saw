@@ -23,6 +23,18 @@ frmAdminHorarios = Ext.extend(frmAdminHorariosUi, {
 
 			'</div>'
 		);
+		
+		var data = new Array();
+		data.push({id:1,nombre:'Aula 1'});
+		console.log("data");console.log(data);
+		
+console.log("this.cmbDispositivos.store"); 		console.log(this.cmbDispositivos.store);
+		this.cmbDispositivos.store.loadData({data:data});
+		
+		
+		data = new Array();
+		data.push({id:1,nombre:'Lunes'});
+		this.cmbDias.store.load({data:data});
     }
 });
 Ext.reg('frmAdminHorarios', frmAdminHorarios);

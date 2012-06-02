@@ -1,16 +1,15 @@
 {
-    "name": "frmHorariosxds.xds",
+    "name": "frmHorarios.xds",
     "projectId": "CB17F2C0-A0CF-40A6-9D68-AF84308B7CA1",
     "settings": {
         "urlPrefix": "http://localhost/",
-        "directAPI": "",
-        "spacesToIndent": "4",
+        "spacesToIndent": 4,
         "codeGenFormat": "Class",
         "extPath": "http://extjs.cachefly.net/ext-3.3.1/",
         "exportPath": ".",
         "lineEnding": "CRLF",
         "instantiateStore": true,
-        "exportXDSFiles": false,
+        "exportXDSFiles": true,
         "genTimestamps": true
     },
     "xdsVersion": "1.1.2",
@@ -78,13 +77,7 @@
                                         "style": "-ext-undefined-",
                                         "width": 250,
                                         "fieldLabel": "Dispositivo",
-                                        "autoRef": "cmbDispositivos",
-                                        "store": "stoDispositivos",
-                                        "mode": "local",
-                                        "triggerAction": "all",
-                                        "id": "cmbDispositivos",
-                                        "displayField": "nombre",
-                                        "valueField": "id"
+                                        "autoRef": "cmbDispositivos"
                                     }
                                 }
                             ]
@@ -109,12 +102,7 @@
                                         "style": "-ext-undefined-",
                                         "fieldLabel": "Dia de la semana",
                                         "width": 150,
-                                        "autoRef": "cmbDias",
-                                        "store": "stoDias",
-                                        "mode": "local",
-                                        "itemId": "cmbDias",
-                                        "displayField": "nombre",
-                                        "valueField": "id"
+                                        "autoRef": "cmbDias"
                                     }
                                 }
                             ]
@@ -341,10 +329,7 @@
             "jsClass": "stoDispositivos",
             "snapToGrid": 10,
             "userConfig": {
-                "storeId": "stoDispositivos",
-                "root": "data",
-                "url": "/programacion/getDispositivos",
-                "messageProperty": "msg"
+                "storeId": "MyStore"
             },
             "cn": [
                 {
@@ -360,35 +345,6 @@
                     "id": "MyField1",
                     "cid": "datafield",
                     "jsClass": "MyField1",
-                    "snapToGrid": 10,
-                    "userConfig": {
-                        "name": "nombre"
-                    }
-                }
-            ]
-        },
-        {
-            "id": "MyStore1",
-            "cid": "jsonstore",
-            "jsClass": "stoDias",
-            "snapToGrid": 10,
-            "userConfig": {
-                "storeId": "stoDias"
-            },
-            "cn": [
-                {
-                    "id": "MyField2",
-                    "cid": "datafield",
-                    "jsClass": "MyField2",
-                    "snapToGrid": 10,
-                    "userConfig": {
-                        "name": "id"
-                    }
-                },
-                {
-                    "id": "MyField3",
-                    "cid": "datafield",
-                    "jsClass": "MyField3",
                     "snapToGrid": 10,
                     "userConfig": {
                         "name": "nombre"

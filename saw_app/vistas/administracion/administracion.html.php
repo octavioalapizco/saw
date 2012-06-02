@@ -7,11 +7,18 @@
 <script type="text/javascript" src="js/ext-3.4.0/adapter/ext/ext-base.js"></script>
 <script type="text/javascript" src="js/ext-3.4.0/ext-all-debug.js"></script>
 
+<script type="text/javascript" src="js/administracion/frmHorarios/stoDias.js"></script>
+<script type="text/javascript" src="js/administracion/frmHorarios/stoDispositivos.js"></script>
+
+
+
 <script type="text/javascript" src="js/administracion/frmHorarios/frmAdminHorarios.ui.js"></script>
+
 <script type="text/javascript" src="js/administracion/frmHorarios/frmAdminHorarios.js"></script>
 <script type="text/javascript" src="js/pagina_monitoreo/horarios/gridMonitoreoHorarios.ui.js"></script>
 <script type="text/javascript" src="js/pagina_monitoreo/horarios/gridMonitoreoHorarios.js"></script>
 <script type="text/javascript" src="js/pagina_monitoreo/horarios/stoMonitoreoHorarios.js"></script>
+
 
 
 <!--link rel="stylesheet" href="css/theme1/monitoreo.css" type="text/css" / .body ul li -->
