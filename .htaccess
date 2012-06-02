@@ -4,18 +4,17 @@
 	# ¿Se podran agrupar rutas por archivos e incluir esos archivos aqiu?
 	
     RewriteEngine On
-	
-	
-	RewriteRule ^index.html mvc/core/frontc.php/home [NC,L]   # 
-	RewriteRule ^nosotros.html mvc/core/frontc.php/nosotros [NC,L] #
-	RewriteRule ^contacto.html mvc/core/frontc.php/contacto [NC,L] #
-	RewriteRule ^login.html  mvc/core/frontc.php/login [NC,L] #
-	RewriteRule ^logout.html  mvc/core/frontc.php/login/logout [NC,L] #
-	RewriteRule ^administracion.html mvc/core/frontc.php/administracion [NC,L] # Handle requests for	#	
-	RewriteRule ^monitoreo.html /mvc/core/frontc.php/monitoreo [NC,L] 										# monitoreo.html	
+		
+	RewriteRule ^index.html 		 mvc_core/frontc.php/default/home [NC,L]   # 
+	RewriteRule ^nosotros.html 		 mvc_core/frontc.php/default/nosotros [NC,L] #
+	RewriteRule ^contacto.html		 mvc_core/frontc.php/default/contacto [NC,L] #
+	RewriteRule ^login.html  		 mvc_core/frontc.php/login [NC,L] #
+	RewriteRule ^logout.html  		 mvc_core/frontc.php/login/logout [NC,L] #
+	RewriteRule ^administracion.html mvc_core/frontc.php/administracion [NC,L] # Handle requests for	#	
+	RewriteRule ^monitoreo.html 	 mvc_core/frontc.php/monitoreo [NC,L] 										# monitoreo.html	
 	  	
 	RewriteCond %{REQUEST_FILENAME} !-f
     RewriteCond %{REQUEST_FILENAME} !-d
-    RewriteRule ^(.*)$ /mvc/core/frontc.php/$1 [L]
+    RewriteRule ^(.*)$ /mvc_core/frontc.php/$1 [L]
 	#ErrorDocument 500 error500.html
 </IfModule>
