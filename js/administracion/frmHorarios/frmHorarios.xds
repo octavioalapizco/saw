@@ -20,221 +20,294 @@
             "jsClass": "frmAdminHorarios",
             "snapToGrid": 10,
             "userConfig": {
-                "title": "My Panel",
-                "width": "-ext-undefined-",
-                "height": 385,
+                "title": "-ext-undefined-",
+                "width": 580,
+                "height": "-ext-undefined-",
                 "unstyled": true,
                 "style": "",
                 "bodyStyle": "padding:8px;",
                 "boxMaxWidth": 650,
-                "labelWidth": "-ext-undefined-"
+                "labelWidth": "-ext-undefined-",
+                "layout": "form"
             },
             "userXType": "frmAdminHorarios",
             "cn": [
                 {
-                    "id": "MyGrid",
-                    "cid": "grid",
-                    "jsClass": "gridMonitoreoDispositivos",
+                    "id": "MyDisplayField",
+                    "cid": "displayfield",
+                    "jsClass": "MyDisplayField",
                     "snapToGrid": 10,
                     "userConfig": {
-                        "title": "-ext-undefined-",
-                        "store": "(none)",
-                        "width": 297,
-                        "height": 290,
-                        "autoExpandColumn": "colNombre",
-                        "frame": true,
-                        "style": "float:left;"
-                    },
-                    "userXType": "gridMonitoreoDispositivos",
-                    "cn": [
-                        {
-                            "id": "MyColumn2",
-                            "cid": "gridcolumn",
-                            "jsClass": "MyColumn1",
-                            "snapToGrid": 10,
-                            "userConfig": {
-                                "header": "Nombre",
-                                "dataIndex": "nombre",
-                                "sortable": true,
-                                "resizable": "-ext-undefined-",
-                                "width": 150,
-                                "id": "colNombre"
-                            }
-                        },
-                        {
-                            "id": "MyColumn3",
-                            "cid": "gridcolumn",
-                            "jsClass": "MyColumn2",
-                            "snapToGrid": 10,
-                            "userConfig": {
-                                "header": "Tipo",
-                                "dataIndex": "tipo",
-                                "sortable": true,
-                                "resizable": "-ext-undefined-",
-                                "width": 100,
-                                "id": "colTipo",
-                                "hidden": true
-                            }
-                        },
-                        {
-                            "id": "MyColumn4",
-                            "cid": "gridcolumn",
-                            "jsClass": "MyColumn3",
-                            "snapToGrid": 10,
-                            "userConfig": {
-                                "header": "Estado",
-                                "dataIndex": "estado",
-                                "sortable": true,
-                                "resizable": "-ext-undefined-",
-                                "width": 80
-                            }
-                        },
-                        {
-                            "id": "MyPagingToolbar",
-                            "cid": "pagingtoolbar",
-                            "jsClass": "MyPagingToolbar",
-                            "dock": "bbar",
-                            "snapToGrid": 10,
-                            "userConfig": {
-                                "store": "(none)",
-                                "displayInfo": true,
-                                "displayMsg": "{0} - {1} de {2}",
-                                "pageSize": 9,
-                                "emptyMsg": "No data"
-                            }
-                        }
-                    ]
+                        "value": "<div class=\"titulo\">Programación Semanal</div>",
+                        "fieldLabel": "-ext-undefined-",
+                        "anchor": "100%",
+                        "hideLabel": true,
+                        "style": "text-align:center;",
+                        "autoRef": "dspTitulo"
+                    }
                 },
                 {
-                    "id": "MyGrid1",
-                    "cid": "grid",
-                    "jsClass": "gridMonitoreoHorarios",
+                    "id": "MyFieldSet1",
+                    "cid": "fieldset",
+                    "jsClass": "MyFieldSet1",
                     "snapToGrid": 10,
                     "userConfig": {
-                        "title": "-ext-undefined-",
-                        "store": "(none)",
-                        "width": 282,
-                        "height": 290,
-                        "autoExpandColumn": "colEstado",
-                        "frame": true,
-                        "style": "float:left;margin-left:20px;"
+                        "title": "Seleccione ",
+                        "layout": "hbox",
+                        "style": "border-width:1px 0 0 0;"
                     },
                     "cn": [
                         {
-                            "id": "MyColumn5",
-                            "cid": "gridcolumn",
-                            "jsClass": "MyColumn1",
+                            "id": "MyContainer1",
+                            "cid": "container",
+                            "jsClass": "MyContainer1",
                             "snapToGrid": 10,
                             "userConfig": {
-                                "header": "Hora Inicio",
-                                "dataIndex": "horaInicio",
-                                "sortable": true,
-                                "resizable": "-ext-undefined-",
-                                "width": 75
-                            }
-                        },
-                        {
-                            "id": "MyColumn6",
-                            "cid": "gridcolumn",
-                            "jsClass": "MyColumn2",
-                            "snapToGrid": 10,
-                            "userConfig": {
-                                "header": "Hora Fin",
-                                "dataIndex": "horaFin",
-                                "sortable": true,
-                                "resizable": "-ext-undefined-",
-                                "width": 66
-                            }
-                        },
-                        {
-                            "id": "MyPagingToolbar1",
-                            "cid": "pagingtoolbar",
-                            "jsClass": "MyPagingToolbar",
-                            "dock": "bbar",
-                            "snapToGrid": 10,
-                            "userConfig": {
-                                "store": "(none)",
-                                "displayInfo": true,
-                                "displayMsg": "{0} - {1} de {2}",
-                                "emptyMsg": "No data",
-                                "pageSize": 7,
-                                "afterPageText": " "
-                            }
-                        },
-                        {
-                            "id": "MyColumn7",
-                            "cid": "gridcolumn",
-                            "jsClass": "MyColumn3",
-                            "snapToGrid": 10,
-                            "userConfig": {
-                                "header": "Estado",
-                                "sortable": true,
-                                "resizable": "-ext-undefined-",
-                                "width": 80,
-                                "dataIndex": "estado",
-                                "id": "colEstado"
-                            }
-                        },
-                        {
-                            "id": "MyToolbar",
-                            "cid": "toolbar",
-                            "jsClass": "MyToolbar",
-                            "dock": "tbar",
-                            "snapToGrid": 10,
+                                "layout": "form",
+                                "labelAlign": "top",
+                                "width": 350
+                            },
                             "cn": [
                                 {
-                                    "id": "MyCombo1",
+                                    "id": "MyCombo2",
                                     "cid": "combobox",
-                                    "jsClass": "MyCombo1",
-                                    "snapToGrid": 10
+                                    "jsClass": "MyCombo2",
+                                    "snapToGrid": 10,
+                                    "userConfig": {
+                                        "style": "-ext-undefined-",
+                                        "width": 250,
+                                        "fieldLabel": "Dispositivo"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "id": "MyContainer",
+                            "cid": "container",
+                            "jsClass": "MyContainer",
+                            "snapToGrid": 10,
+                            "userConfig": {
+                                "layout": "form",
+                                "labelAlign": "top"
+                            },
+                            "cn": [
+                                {
+                                    "id": "MyCombo",
+                                    "cid": "combobox",
+                                    "jsClass": "MyCombo",
+                                    "snapToGrid": 10,
+                                    "userConfig": {
+                                        "style": "-ext-undefined-",
+                                        "fieldLabel": "Dia de la semana",
+                                        "width": 150
+                                    }
                                 }
                             ]
                         }
                     ]
                 },
                 {
-                    "id": "MyForm1",
-                    "cid": "form",
-                    "jsClass": "MyForm1",
+                    "id": "MyFieldSet",
+                    "cid": "fieldset",
+                    "jsClass": "MyFieldSet",
                     "snapToGrid": 10,
                     "userConfig": {
-                        "title": "-ext-undefined-",
-                        "style": "float:left;margin-left:10px;",
-                        "width": 250,
-                        "height": 290
+                        "title": "Configuracion de Horarios",
+                        "height": 266,
+                        "style": "border-width:1px 0 0 0;"
                     },
                     "cn": [
                         {
-                            "id": "MyTimeField",
-                            "cid": "timefield",
-                            "jsClass": "MyTimeField",
+                            "id": "MyGrid1",
+                            "cid": "grid",
+                            "jsClass": "gridMonitoreoHorarios",
                             "snapToGrid": 10,
                             "userConfig": {
-                                "fieldLabel": "Label",
-                                "anchor": "100%"
-                            }
-                        },
-                        {
-                            "id": "MyTimeField1",
-                            "cid": "timefield",
-                            "jsClass": "MyTimeField1",
-                            "snapToGrid": 10
-                        },
-                        {
-                            "id": "MyToolbar1",
-                            "cid": "toolbar",
-                            "jsClass": "MyToolbar1",
-                            "dock": "bbar",
-                            "snapToGrid": 10,
+                                "title": "Horarios del dia",
+                                "store": "(none)",
+                                "width": 282,
+                                "height": 216,
+                                "autoExpandColumn": "colEstado",
+                                "frame": true,
+                                "style": "float:left;",
+                                "boxMaxWidth": 282,
+                                "autoRef": "gridHorarios"
+                            },
                             "cn": [
                                 {
-                                    "id": "MyButton",
-                                    "cid": "button",
-                                    "jsClass": "MyButton",
+                                    "id": "MyColumn5",
+                                    "cid": "gridcolumn",
+                                    "jsClass": "MyColumn1",
                                     "snapToGrid": 10,
                                     "userConfig": {
-                                        "text": "Guardar"
+                                        "header": "Hora Inicio",
+                                        "dataIndex": "horaInicio",
+                                        "sortable": true,
+                                        "resizable": "-ext-undefined-",
+                                        "width": 75
                                     }
+                                },
+                                {
+                                    "id": "MyColumn6",
+                                    "cid": "gridcolumn",
+                                    "jsClass": "MyColumn2",
+                                    "snapToGrid": 10,
+                                    "userConfig": {
+                                        "header": "Hora Fin",
+                                        "dataIndex": "horaFin",
+                                        "sortable": true,
+                                        "resizable": "-ext-undefined-",
+                                        "width": 66
+                                    }
+                                },
+                                {
+                                    "id": "MyPagingToolbar1",
+                                    "cid": "pagingtoolbar",
+                                    "jsClass": "MyPagingToolbar",
+                                    "dock": "bbar",
+                                    "snapToGrid": 10,
+                                    "userConfig": {
+                                        "store": "(none)",
+                                        "displayInfo": true,
+                                        "displayMsg": "{0} - {1} de {2}",
+                                        "emptyMsg": "No data",
+                                        "pageSize": 7,
+                                        "afterPageText": " "
+                                    }
+                                },
+                                {
+                                    "id": "MyColumn7",
+                                    "cid": "gridcolumn",
+                                    "jsClass": "MyColumn3",
+                                    "snapToGrid": 10,
+                                    "userConfig": {
+                                        "header": "Estado",
+                                        "sortable": true,
+                                        "resizable": "-ext-undefined-",
+                                        "width": 80,
+                                        "dataIndex": "estado",
+                                        "id": "colEstado"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "id": "MyForm1",
+                            "cid": "form",
+                            "jsClass": "MyForm1",
+                            "snapToGrid": 10,
+                            "userConfig": {
+                                "title": "Edicion de Horario",
+                                "style": "float:left;margin-left:10px;",
+                                "width": 240,
+                                "height": 215,
+                                "frame": true
+                            },
+                            "cn": [
+                                {
+                                    "id": "MyToolbar1",
+                                    "cid": "toolbar",
+                                    "jsClass": "MyToolbar1",
+                                    "dock": "bbar",
+                                    "snapToGrid": 10,
+                                    "userConfig": {
+                                        "height": "-ext-undefined-"
+                                    },
+                                    "cn": [
+                                        {
+                                            "id": "MyButton",
+                                            "cid": "button",
+                                            "jsClass": "MyButton",
+                                            "snapToGrid": 10,
+                                            "userConfig": {
+                                                "text": "Nuevo",
+                                                "icon": "http://saw/imagenes/add1.png"
+                                            }
+                                        },
+                                        {
+                                            "id": "MyButton1",
+                                            "cid": "button",
+                                            "jsClass": "MyButton1",
+                                            "snapToGrid": 10,
+                                            "userConfig": {
+                                                "text": "Borrar",
+                                                "disabled": true,
+                                                "icon": "http://saw/imagenes/list_remove.png"
+                                            }
+                                        }
+                                    ]
+                                },
+                                {
+                                    "id": "MyFieldSet2",
+                                    "cid": "fieldset",
+                                    "jsClass": "MyFieldSet2",
+                                    "snapToGrid": 10,
+                                    "userConfig": {
+                                        "title": "-ext-undefined-"
+                                    },
+                                    "cn": [
+                                        {
+                                            "id": "MyTimeField1",
+                                            "cid": "timefield",
+                                            "jsClass": "MyTimeField1",
+                                            "snapToGrid": 10,
+                                            "userConfig": {
+                                                "emptyText": "10:30 AM",
+                                                "fieldLabel": "Fecha Inicio",
+                                                "width": 100
+                                            }
+                                        },
+                                        {
+                                            "id": "MyCombo3",
+                                            "cid": "combobox",
+                                            "jsClass": "MyCombo3",
+                                            "snapToGrid": 10,
+                                            "userConfig": {
+                                                "fieldLabel": "Fecha Fin",
+                                                "anchor": "-ext-undefined-",
+                                                "width": 100,
+                                                "emptyText": "12:00 PM"
+                                            }
+                                        }
+                                    ]
+                                },
+                                {
+                                    "id": "MyFieldSet3",
+                                    "cid": "fieldset",
+                                    "jsClass": "MyFieldSet3",
+                                    "snapToGrid": 10,
+                                    "userConfig": {
+                                        "title": "Estado",
+                                        "hideLabels": true,
+                                        "layout": "hbox",
+                                        "height": 60
+                                    },
+                                    "cn": [
+                                        {
+                                            "id": "MyRadio",
+                                            "cid": "radio",
+                                            "jsClass": "MyRadio",
+                                            "snapToGrid": 10,
+                                            "userConfig": {
+                                                "fieldLabel": "Label",
+                                                "boxLabel": "Activo",
+                                                "anchor": "100%",
+                                                "style": "margin-left:20px;"
+                                            }
+                                        },
+                                        {
+                                            "id": "MyRadio1",
+                                            "cid": "radio",
+                                            "jsClass": "MyRadio1",
+                                            "snapToGrid": 10,
+                                            "userConfig": {
+                                                "fieldLabel": "Label",
+                                                "boxLabel": "Cancelado",
+                                                "anchor": "100%",
+                                                "style": "margin-left:40px;"
+                                            }
+                                        }
+                                    ]
                                 }
                             ]
                         }

@@ -106,6 +106,31 @@ color: white;
    border: 1px solid #ccc;
    height: 34px;
 }
+.titulo{
+	
+	margin-bottom:100px;
+	
+}
+.titulo .texto{
+	display:block;
+	font-size:20px;
+	text-align:left;
+	width:470px;
+	float:left;
+	margin-top:20px;
+	margin-left:10px;
+}
+.titulo .imagen{
+	background-image:url('/imagenes/scheduled_tasks_64.png');
+	background-repeat:no-repeat;
+	width:64px;
+	height:64px;
+	display:block;
+	float:left;
+}
+#featured{
+	height:550px !important;
+}
 </style>
 
 
@@ -116,7 +141,7 @@ Ext.onReady(function() {
     Ext.QuickTips.init();
     Ext.onReady(function() {
     Ext.QuickTips.init();		
-		
+		new frmAdminHorarios({renderTo:'panelAdministracion'});
 	});
 	
 	
@@ -138,4 +163,4 @@ Ext.onReady(function() {
 <option>The second option</option>
 </select>
 </div>-->
-<div id="panelAdministracion" style="margin-top:60px;position:absolute;left:50%;margin-left:-175px;"></div>
+<div id="panelAdministracion" style="margin-top:30px;position:absolute;left:50%;margin-left:-290px;"></div>

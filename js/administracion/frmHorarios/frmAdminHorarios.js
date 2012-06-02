@@ -14,6 +14,15 @@
 frmAdminHorarios = Ext.extend(frmAdminHorariosUi, {
     initComponent: function() {
         frmAdminHorarios.superclass.initComponent.call(this);
+		this.gridHorarios.store=new stoMonitoreoHorarios();
+		this.dspTitulo.setValue(
+			'<div class="titulo">'+
+				'<div class="texto">Programacion Semanal</div>'+
+				'<div class="imagen"></div>'+
+				
+
+			'</div>'
+		);
     }
 });
 Ext.reg('frmAdminHorarios', frmAdminHorarios);
