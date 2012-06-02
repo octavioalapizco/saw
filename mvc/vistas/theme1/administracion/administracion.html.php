@@ -113,7 +113,7 @@ Ext.onReady(function() {
 		card = new Ext.Panel({
 			renderTo: 'panelAdministracion',
 			//height:300,
-			width:500,
+			width:700,
 			unstyled:false,
 			items:[{
 				xtype:'frmAdminHorarios',
