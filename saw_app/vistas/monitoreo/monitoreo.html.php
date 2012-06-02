@@ -20,21 +20,19 @@
 <style type="text/css">
 #featured{	
 	height:320px !important;
-	padding-top:41px !important;
+	padding-top:80px !important;
+	
+	height:400px !important;
+
 }
 .tarjeta_monitoreo{
 	
 }	
 .body ul li{
 	padding:0;
-}/*
-.footer{
-	margin-left:-10px;
 }
-.footer p {
-		font-size: 14px;
-		margin:5px 0 0 227px;
-	}*/
+
+
 	
 	
 	
@@ -61,8 +59,9 @@ Ext.onReady(function() {
 	Al Body
     ===============================================================================================================================!-->
 <div class="pagina_monitoreo" style='margin-top:29px;position:absolute;'>
+	
 	<div style="float:left;margin-top:-20px;">
-		<h2>Estado de Dispositivos:</h2>
+		
 		<div id="gridMonitoreoDispositivos"></div>
 	</div>
 
@@ -70,7 +69,7 @@ Ext.onReady(function() {
 	<ul class="monitoreo" style="background:none;display:inline;margin-top:-25px;possition:absolute;">
 		<li style="">							
 			
-			<div class="lblNombreDispositivo" style="height:20px;" >Aula 1 </div>	
+			<div class="lblNombreDispositivo" style="height:20px;visibility:hidden;" >Aula 1 </div>	
 			<?php $this->render_tarjeta_de_dispositivo($num_aire=5); ?>
 		</li>	
 	</ul>
