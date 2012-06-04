@@ -7,7 +7,13 @@ El robot tiene dos tareas principales:
 */
 class MonitoreoRobot extends Model{
 	
-	public function actualizar(){
+	public function actualizar($forzar=false){
+		if ($forzar){
+			$dbh=$this->getDb();	
+			$sql="UPDATE config SET fecha_actual = 'NULL' WHERE idConfig=1";
+			$sth = $dbh->prepare($sql);		
+			$res=$sth->execute();
+		}
 		$this->actualizarProgramacionDiaria();
 		$this->actualizarEstadoDeDispositivos();
 		return true;
@@ -106,7 +112,7 @@ class MonitoreoRobot extends Model{
 			print_r($sth->errorInfo() );
 			return false;
 		}
-		$sth->debugDumpParams();
+//		$sth->debugDumpParams();
 		//voalá
 		
 		$dbh->commit();		

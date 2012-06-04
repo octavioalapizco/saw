@@ -9,15 +9,11 @@
 
 <script type="text/javascript" src="js/administracion/frmHorarios/stoDias.js"></script>
 <script type="text/javascript" src="js/administracion/frmHorarios/stoDispositivos.js"></script>
-
-
+<script type="text/javascript" src="js/administracion/frmHorarios/stoHorarios.js"></script>
 
 <script type="text/javascript" src="js/administracion/frmHorarios/frmAdminHorarios.ui.js"></script>
-
 <script type="text/javascript" src="js/administracion/frmHorarios/frmAdminHorarios.js"></script>
-<script type="text/javascript" src="js/pagina_monitoreo/horarios/gridMonitoreoHorarios.ui.js"></script>
-<script type="text/javascript" src="js/pagina_monitoreo/horarios/gridMonitoreoHorarios.js"></script>
-<script type="text/javascript" src="js/pagina_monitoreo/horarios/stoMonitoreoHorarios.js"></script>
+
 
 
 
@@ -136,7 +132,7 @@ color: white;
 	float:left;
 }
 #featured{
-	height:550px !important;
+	height:670px !important;
 }
 </style>
 
@@ -148,7 +144,20 @@ Ext.onReady(function() {
     Ext.QuickTips.init();
     Ext.onReady(function() {
     Ext.QuickTips.init();		
+	
 		new frmAdminHorarios({renderTo:'panelAdministracion'});
+		/*card = new Ext.Panel({
+			layout:'card',
+			activeItem: 0,
+			width:800,
+			height:800,
+			forceLayout:true,
+			renderTo:'panelAdministracion',
+			items:[
+				new frmAdminHorarios(),
+				{xtype:'panel',title:'otra Cosa'}
+			]
+		});*/
 	});
 	
 	
