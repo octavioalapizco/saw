@@ -5,7 +5,7 @@
 	
     RewriteEngine On
 		
-	RewriteRule ^index.html 		 mvc_core/frontc.php/monitoreo [NC,L]   # 
+	RewriteRule ^index.html 		 mvc_core/frontc.php/default/home [NC,L]   # 
 	RewriteRule ^nosotros.html 		 mvc_core/frontc.php/default/nosotros [NC,L] #
 	RewriteRule ^contacto.html		 mvc_core/frontc.php/default/contacto [NC,L] #
 	RewriteRule ^login.html  		 mvc_core/frontc.php/login [NC,L] #
