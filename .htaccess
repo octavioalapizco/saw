@@ -1,7 +1,6 @@
 <IfModule mod_rewrite.c>
 	
 	# Enrutamiento mediante htacces de apache	
-	# ¿Se podran agrupar rutas por archivos e incluir esos archivos aqiu?
 	
     RewriteEngine On
 		
