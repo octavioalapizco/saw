@@ -14,9 +14,22 @@ class MonitoreoRobot extends Model{
 			$sth = $dbh->prepare($sql);		
 			$res=$sth->execute();
 		}
-		$this->actualizarProgramacionDiaria();
+		$this->actualizarProgramacionDiaria(); 
 		$this->actualizarEstadoDeDispositivos();
 		return true;
+	}
+	
+	function hardware(){
+		$dbh=$this->getDb();		
+		#----------------------------------------------------
+		$sql='SELECT * FROM dispositivos';
+		$sth = $dbh->prepare($sql);		
+		$sth->execute();
+		$dispositivos = $sth->fetchAll(PDO::FETCH_ASSOC);
+		
+		if ( $dispositivos [0]['estado']=='ON' && $dispositivos [1]['estado']=='ON' && $dispositivos [2]['estado']=='ON'){
+			//exec
+		}
 	}
 	
 	private function actualizarEstadoDeDispositivos(){	
@@ -29,7 +42,7 @@ class MonitoreoRobot extends Model{
 		#	Actualiza la tabla de programacion_del_dia
 		#----------------------------------------------------
 		
-		$sql = 'UPDATE programacion_del_dia SET estado="APAGADO" WHERE estado="ENCENDIDO" AND now() NOT BETWEEN fechaInicio AND  fechaFin AND cancelado != 1';
+		$sql = 'UPDATE programacion_del_dia SET estado="APAGADO" WHERE estado="ENCENDIDO" AND now() NOT BETWEEN fechaInicio AND  fechaFin';
 		$sth = $dbh->prepare($sql);		
 		$res=$sth->execute();
 		
@@ -50,7 +63,7 @@ class MonitoreoRobot extends Model{
 		#----------------------------------------------------
 		#	Actualiza la tabla dispositivos
 		#----------------------------------------------------
-		$sql='UPDATE dispositivos SET estado="OFF" WHERE estado != 1';
+		$sql='UPDATE dispositivos SET estado="OFF" WHERE eventoCancelado != 1';
 		$sth = $dbh->prepare($sql);				
 		$res=$sth->execute();
 		if (!$res){
@@ -59,7 +72,7 @@ class MonitoreoRobot extends Model{
 			return false;
 		}
 		
-		$sql='UPDATE dispositivos SET estado="ON" WHERE idDispositivo IN (SELECT dispositivoId FROM programacion_del_dia WHERE estado ="ENCENDIDO")';
+		$sql='UPDATE dispositivos SET estado="ON",eventoCancelado=0 WHERE idDispositivo IN (SELECT dispositivoId FROM programacion_del_dia WHERE estado ="ENCENDIDO")';
 		$sth = $dbh->prepare($sql);				
 		$res=$sth->execute();
 		if (!$res){
