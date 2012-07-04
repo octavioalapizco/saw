@@ -165,7 +165,7 @@ Ext.onReady(function() {
 });
 
 </script>
-<div class="invertedshiftdown" style="position:absolute;left:50%;margin-left:-185px;">
+<!--div class="invertedshiftdown" style="position:absolute;left:50%;margin-left:-185px;">
 <ul>
 	<li class="current"><a href="#">Horarios</a></li>
 	<li><a href="#">Usuarios</a></li>

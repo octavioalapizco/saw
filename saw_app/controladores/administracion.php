@@ -2,6 +2,16 @@
 class AdministracionController extends Controlador{
 
 	function render(){
+		if(!isset($_SESSION['username']))
+		{
+				require_once('../saw_app/vistas/login_view.php');
+				$tema= new Layout();			//Layout
+				$vista=new LoginView();
+				$tema->setSeccion('contenido',$vista);
+
+				$tema->render();
+				return true;
+		}
 		require_once('../saw_app/vistas/administracion_view.php');
 		$pagina= new Layout();
 		$vista=new AdministracionView();

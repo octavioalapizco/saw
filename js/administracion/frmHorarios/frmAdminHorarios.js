@@ -31,8 +31,8 @@ frmAdminHorarios = Ext.extend(frmAdminHorariosUi, {
 		var data = new Array(
 			{id:1,nombre:'D 01'},
 			{id:2,nombre:'D 02'},
-			{id:4,nombre:'D 03'},
-			{id:3,nombre:'D 04'}
+			{id:3,nombre:'D 03'},
+			{id:4,nombre:'D 04'}
 		);
 		this.cmbDispositivos.store.loadData({data:data});
 		this.cmbDispositivos.setValue(1);
